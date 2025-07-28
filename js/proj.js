@@ -18,7 +18,7 @@ let Projects = [
 `,
         demoProj: "https://paper-shelf-front-endd-pent.vercel.app/",
         githubProj: "https://github.com/MahmoudShalabyy/PaperShelf-backEnd.git",
-        imgProj: "../images/project/papershelf.png",
+        imgProj: "../images/project/PaperShelf.png",
     },
     {
         headProj: "Pack&Go E-commerce",
@@ -64,7 +64,7 @@ let Projects = [
 `,
         demoProj: "https://mahmoudshalabyy.github.io/site1/3.html",
         githubProj: "https://github.com/MahmoudShalabyy/site1.git",
-        imgProj: "./images/project/d.png"
+        imgProj: "./images/project/d.PNG"
     },
     {
         headProj: "Coffee Corner Landing Page",
