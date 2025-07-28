@@ -18,7 +18,7 @@ let Projects = [
 `,
         demoProj: "https://paper-shelf-front-endd-pent.vercel.app/",
         githubProj: "https://github.com/MahmoudShalabyy/PaperShelf-backEnd.git",
-        imgProj: "../images/project/PaperShelf.png",
+        imgProj: "./images/project/PaperShelf.png",
     },
     {
         headProj: "Pack&Go E-commerce",
