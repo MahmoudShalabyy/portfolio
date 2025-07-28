@@ -4,7 +4,7 @@ A professional and fully responsive personal portfolio website showcasing my ski
 
 ## 🚀 Live Demo
 
-[**View Website**](https://badawy24.github.io/Badawy-Portfolio/)  
+[**View Website**](https://mahmoudshalabyy.github.io/portfolio/#)  
 
 ---
 
@@ -33,7 +33,7 @@ A professional and fully responsive personal portfolio website showcasing my ski
 
 ## 📬 Contact Me
 
-- 📧 **Email:** [mahmoudshalabyyy4@gmail.com](mailto:abdelrahman.ahmed2410@gmail.com)
+- 📧 **Email:** [mahmoudshalabyyy4@gmail.com](mailto:mahmoudshalabyyy4@gmail.com)
 - 📱 **Phone:** +20 10273266222
 - 🖥️ **GitHub:** [MahmoudShalabyy](https://github.com/MahmoudShalabyy)
 - 💼 **LinkedIn:** [MahmoudShalabyy](https://www.linkedin.com/in/mahmoud-shalaby-58b237227/)
