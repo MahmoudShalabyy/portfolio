@@ -5,32 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Responsive Personal Portfolio Website Using HTML CSS & JavaScript | Codehal</title>
+    <title>Mahmoud Shalaby - Portfolio</title>
     <!-- boxicons -->
    <link href='https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css' rel='stylesheet'>
     <!-- custom css -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/light.css" id="mode">
 </head>
 
 <body>
 
     <!-- header -->
-     <header class="active">
-        <a href="#" class="logo">Portfolio </a>
+    <header>
+        <a href="#" class="logo">
+            Portfolio
+        </a>
 
-        <i class='bx bx-menu' id="menu-icon"></i>
-
-
+        <i class="bx bx-menu" id="menu-icon"></i>
         <nav>
-            <a href="#" class="active"> Home</a>
+            <a href="#" class="active">Home</a>
             <a href="#">Resume</a>
             <a href="#">Portfolio</a>
-            <a href="#"> Contact</a>
-            <button id="theme-toggle" class="btn"><i class='bx bxs-moon'></i></button>
-
-        
-     </nav>
-     </header>
+            <a href="#">Contact</a>
+            <button id="mode-btn"><i class="bx"></i></button>
+        </nav>
+    </header>
     
 
 
@@ -39,59 +38,68 @@
      <section class="home active">
         <div class="home-details">
             <h1>Mahmoud Shalaby</h1>
-            <h2>iam a
-                <span style="--i:2;" data-text="Software Engineer">Software Engineer</span> 
-                <span style="--i:1;" data-text="Full Stack Developer">Full Stack Developer</span>
-                
-                </h2>
+            <h2>I'm a
+                <span style="--i:4;" data-text="Full Stack Developer">Full Stack Developer</span>
+                <span style="--i:3;" data-text="Front-End Developer">Front-End Developer</span>
+                <span style="--i:2;" data-text="Back-End Developer">Back-End Developer</span>
+                <span style="--i:1;" data-text="Software Developer">Software Developer</span>
+            </h2>
             <p>A results-driven Full Stack Developer with a strong background in building scalable and high-performance systems. Passionate about solving complex problems and optimizing system efficiency,
-                 I leverage my analytical skills and technical expertise to develop robust back-end and Front-End solutions that align with business needs and drive continuous growth..</p>
-           
-            <div class="btn-sci">
-                <a href="https://drive.google.com/file/d/1GDa9foeRqSw5Mq1x9B94GsYHi4Fsi2Ue/view?usp=drive_link" class="btn">Download CV</a>
-                <div class="sci">
-                    <a href="https://github.com/MahmoudShalabyy"><i class='bx bxl-github'></i></a>
-                    <a href="https://www.linkedin.com/in/mahmoud-shalaby-58b237227/"><i class='bx bxl-linkedin'></i></a>
-                    <a href="https://web.facebook.com/ghrthygfhdfgfgdhdfgh"><i class='bx bxl-facebook'></i></a>
-                    <a href="hhttps://leetcode.com/u/mahmoudshalabyy4/"><i class='bx bx-code-alt' ></i></a>
-                    <a href="https://www.upwork.com/freelancers/~011eaffdd3a6074307"><i class='bx bxl-upwork'></i></a>
+                 I leverage my analytical skills and technical expertise to develop robust back-end and Front-End solutions that align with business needs and drive continuous growth.</p>
 
+            <div class="social-section">
+                <a href="https://drive.google.com/file/d/1I912tR0T2EekPMt3eStm4_c574NcaPxL/view?usp=drive_link"
+                    class="btn" target="_blank">
+                    Perview CV
+                </a>
+                <div class="social">
+                    <a href="https://github.com/MahmoudShalabyy" target="_blank" title="Github" class="bx-burst-hover"><i
+                            class="bx bxl-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mahmoud-shalaby-58b237227/" target="_blank" title="LinkedIn"
+                        class="bx-burst-hover"><i class="bx bxl-linkedin"></i></a>
+                    <a href="https://web.facebook.com/ghrthygfhdfgfgdhdfgh" target="_blank" title="Facebook"
+                        class="bx-burst-hover"><i class="bx bxl-facebook"></i></a>
+                    <a href="https://leetcode.com/u/mahmoudshalabyy4/" target="_blank" title="LeetCode"
+                        class="bx-burst-hover"><i class="bx bx-code-alt"></i></a>
+                    <a href="https://www.upwork.com/freelancers/~011eaffdd3a6074307" target="_blank" title="UpWork"
+                        class="bx-burst-hover"><i class="bx bxl-upwork"></i></a>
                 </div>
-           
             </div>
         </div>
-
         <div class="home-img">
             <div class="img-box">
                 <div class="img-item">
-                    <img src="images/profile.jpeg">
+                    <img src="./images/profile.jpeg" alt="profile image">
                 </div>
             </div>
         </div>
-        
-     </section>
+    </section>
         
     <!-- resume section -->
 
-<section class="resume-activate ">
-    <div class="resume-container">
-        <div class="resume-box">
-            <h2>why hire me </h2>
-            <p class="desc">Extensive experience in various fields, I have strong problem-solving skills , scalable solutions , high performance , collaborative and goal-oriented .</p>
-        <button class="resume-btn active">experience</button>
-        <button class="resume-btn"> education</button>
-        <button class="resume-btn">skills</button>
-        <button class="resume-btn">about me</button>
-        
-        </div>
-        <div class="resume-box">
+ <section class="resume">
+        <div class="resume-container">
+            <div class="resume-box resume-main-box">
+                <h2>Why Hire Me ?</h2>
+                           <p class="desc">Extensive experience in various fields, I have strong problem-solving skills , scalable solutions , high performance , collaborative and goal-oriented .</p>
 
-            <div class="resume-detail experience active">
-                <h2 class="heading">My <span>experience</span></h2>
-                <p class="desc">Hands-on experience in Full Stack Development, specializing in JavaScript, AngularJs, Node.js, Laravel, SQL, Mongo DB and REST APIs. Developed and optimized scalable back-end solutions, 
-                    built dynamic front-end interfaces, and worked on real-world projects to enhance system efficiency and user experience. </p>
-            
-                <div class="resume-list">
+                <button class="resume-btn active">Experience</button>
+                <button class="resume-btn">Education</button>
+                <button class="resume-btn">Skills</button>
+                <button class="resume-btn">About Me</button>
+            </div>
+
+            <div class="resume-box">
+                <article class="resume-details experience active">
+                    <h2 class="heading">
+                        My <span>Experience</span>
+                    </h2>
+                    <p class="desc">
+                        Experienced Software Developer with a strong background in backend and full-stack development.
+                        Skilled in building scalable, secure, and high-performance applications. Passionate about
+                        problem-solving, innovation, and delivering efficient digital solutions.
+                    </p>
+                    <div class="resume-list">
                     <div class="resume-item">
                         <p class="year">2025 - present</p>
                         <h3>Full Stack Web Developer</h3>
@@ -113,29 +121,10 @@
                         <div class="company">Route Academy</div>
                         <p>specializing in Node.js,Next.JS, JavaScript, Mongo DB, and REST APIs.</p>
                     </div>
+                </article>
 
-                  
-                
-            
-                
-                    <div class="resume-item">
-                        <p class="year"> 2021 - 2023</p>
-                        <h3>instructor and mentor of Web Committee</h3>
-                        <div class="company">Google Development Student Club Benha University</div>
-                        <p>Coaching newcomers on many technologies, web applications,frameworks.</p>
-                    </div>
-
-                    
-                </div>
-            
-              
-                
-                
-            
-            </div>
-            
-            <div class="resume-detail education">
-                <h2 class="heading">My <span>education</span></h2>
+                <article class="resume-details education">
+               <h2 class="heading">My <span>education</span></h2>
                 <p class="desc">Over the years I have learned many skills and techniques in college and in intensive programs and trainings focused on the field of Full Stack Development
                      gaining hands-on experience in this technologies and best coding practice </p>
             
@@ -168,79 +157,34 @@
                         <p>Mastering HTML, CSS, Javascript, Node.Js, React.Js, PostgreSQL, Web3 </p>
                     </div>
                 </div>
-            
-            </div>
+                </article>
 
-            <div class="resume-detail skills">
-                <h2 class="heading">My <span>skills</span></h2>
-                <p class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Deserunt quia ab ratione unde rerum eligendi odit impedit perferendis optio, suscipit sunt </p>
+                <article class="resume-details skills">
+                    <h2 class="heading">
+                        My <span>Skills</span>
+                    </h2>
+                    <p class="desc">
+                        Strong <b>problem-solving</b> and <b>critical thinking</b> abilities, with <b>effective
+                            communication</b> and <b>collaboration</b> in team environments. Skilled in <b>time
+                            management</b> and <b>adapting</b> to new technologies. Demonstrated leadership and
+                        initiative in various projects.
+                    </p>
+                    <div id="skills-box" class="resume-list">
+                        <!-- From skills.js -->
+                    </div>
+                </article>
 
-                  <div class="resume-list">
-                    <div class="resume-item">
-                        <i class='bx bxl-html5'></i>
-                        <span>HTML5</span>
-                    </div>
-                    <div class="resume-item">
-                        <i class='bx bxl-css3'></i>
-                        <span>CSS</span>
-                    </div>
-                    <div class="resume-item">
-                        <i class='bx bxl-javascript'></i>
-                        <span>JavaScript</span>
-                    </div>
-                    <div class="resume-item">
-                        <i class='bx bxl-bootstrap'></i>
-                        <span>Bootstrap</span>
-                    </div>
-                    <div class="resume-item">
-                        <i class='bx bxl-tailwind-css' ></i>
-                        <span>Tailwind CSS </span>
-                    </div>
-                    <div class="resume-item">
-                        <i class='bx bxl-react'></i>
-                        <span>React</span>
-                    </div>
-                    <div class="resume-item">
-                        <i class='bx bxl-angular'></i>
-                        <span>angular</span>
-                    </div>
-                    <div class="resume-item">
-                        <i class='bx bxl-nodejs' ></i>
-                        <span>Node.JS</Node></span>
-                    </div>
-                    <div class="resume-item">
-                        <i class='bx bxl-php' ></i>
-                        <span>PHP</span>
-                    </div>
-                    <div class="resume-item">
-                        <i class='bx bxl-mongodb' ></i>
-                        <span> Mongo.DB</span>
-                    </div>
-                    
-                    
-                    <div class="resume-item">
-                        <i class='bx bxs-data'></i>
-                        <span>MySQL</span>
-                    </div>
-                    
-                    <div class="resume-item">
-                        <i class='bx bxl-git'></i>
-                        <span> Git</span>
-                    </div>
-                  
-                    
-                  </div>
-
-
-            </div>
-
-            <div class="resume-detail about ">
-                <h2 class="heading">My <span>about me</span></h2>
-                <p class="desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                     Deserunt quia ab ratione unde rerum eligendi odit impedit perferendis optio, suscipit sunt </p>
-
-                     <div class="resume-list">
+                <article class="resume-details about">
+                    <h2 class="heading">
+                        About <span>Me</span>
+                    </h2>
+                    <p class="desc">
+                        I am passionate about technology and computing, with a constant desire to learn and grow. I
+                        enjoy taking on technical challenges and solving complex problems. I also believe in maintaining
+                        a balance between work and personal life, and I make sure to spend time exercising and
+                        connecting with my friends and family.
+                    </p>
+                    <div class="resume-list">
                         <div class="resume-item">
                           <p>Name :<span>Mahmoud Shalaby</span></p>    
                         </div>
@@ -266,19 +210,18 @@
                           <p>Phone :<span>01027326622</span></p>    
                         </div>
                         <div class="resume-item">
-                            <p>Email :<span class="email">mahmoudshalabyy4@gmail.com</span></p>    
+                            <p>Email :<span class="email">mahmoudshalabyyy4@gmail.com</span></p>    
                         </div>
                         
                      </div> 
-            </div>   
-          
-             </div>
-    </div>
-</section>
+                </article>
+            </div>
+        </div>
+    </section>
 
     <!-- portfolio section -->
 
-<section class="protfolio ">
+<!-- <section class="protfolio ">
     <h2 class="heading">Latest <span>Project</span></h2>
     <div class="protfolio-container">
         <div class="protfolio-box">
@@ -394,56 +337,107 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
+ 
+<section class="portfolio">
+        <h2 class="heading">Latest <span>Projects</span></h2>
+        <div class="portfolio-containber">
+            <article id="portfolio-box" class="portfolio-box">
+                <!-- From proj.js -->
+            </article>
+            <!-- ******* -->
+            <article class="portfolio-box">
+                <div class="portfolio-carousel">
+                    <div id="img-slide" class="img-slide">
+                        <!-- From proj.js -->
+                    </div>
+                </div>
+                <div class="navigation">
+                    <button class="arrow-left disabled">
+                        <i class='bx bx-chevron-left'></i>
+                    </button>
+                    <button class="arrow-right">
+                        <i class='bx bx-chevron-right'></i>
+                    </button>
+                </div>
+            </article>
 
-    <!-- contact section -->
-    <section class="contact ">
+        </div>
+    </section>
+   
+
+<!-- contact section -->
+ <section class="contact">
         <div class="contact-container">
             <div class="contact-box">
-                <h2>lets work together</h2>
-                <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus, molestias.</p>
-                <div class="contact-detail">
-                    <i class="bx bxs-phone"></i>
-                    <div class="detail">
-                        <p>Phone </p>
-                        <p>01027326622</p>
+                <h2>Let's Work Together</h2>
+                <p class="desc">
+                    If you need a professional website design or want to build a website from scratch, I’m here to help!
+                    I can also create creative landing pages that boost your conversion rate. Additionally, I have
+                    experience in website management and providing technical support to ensure smooth and efficient
+                    operation.
+                </p>
+                <div class="contact-details">
+                    <i class='bx bx-phone'></i>
+                    <div class="details">
+                        <p>Phone</p>
+                        <p>+20 1027326622</p>
                     </div>
                 </div>
-                <div class="contact-detail">
-                    <i class='bx bxs-envelope' ></i>
-                    <div class="detail">
-                        <p>Email </p>
-                        <p>mahmoudshalabyy4@gmail.com</p>
+                <div class="contact-details">
+                    <i class='bx bxs-envelope'></i>
+                    <div class="details">
+                        <p>Email</p>
+                        <p>mahmoudshalabyyy4@gmail.com</p>
                     </div>
                 </div>
-                <div class="contact-detail">
-                    <i class='bx bxs-map' ></i>
-                    <div class="detail">
-                        <p>Address  </p>
-                        <p>cairo</p>
-                    </div>
+                <div class="contact-details">
+                    <a href="https://github.com/MahmoudShalabyy" target="_blank" title="Github"><i
+                            class="bx bxl-github bx-tada-hover"></i></a>
+                    <a href="https://www.linkedin.com/in/mahmoud-shalaby-58b237227/" target="_blank"
+                        title="LinkedIn"><i class="bx bxl-linkedin bx-tada-hover"></i></a>
+                    <a href="https://web.facebook.com/ghrthygfhdfgfgdhdfgh" target="_blank"
+                        title="Facebook"><i class="bx bxl-facebook bx-tada-hover"></i></a>
+                    <a href="https://leetcode.com/u/mahmoudshalabyy4/" target="_blank" title="LeetCode"><i
+                            class="bx bx-code-alt bx-tada-hover"></i></a>
+                    <a href="https://www.upwork.com/freelancers/~011eaffdd3a6074307" target="_blank" title="UpWork"><i
+                            class="bx bxl-upwork bx-tada-hover"></i></a>
                 </div>
             </div>
+
             <div class="contact-box">
-                <form action="">
-                    <h2 class="heading">Contact <span>Me!</span></h2>
+                <!-- Start Alert Message -->
+                <div class="success-message" id="success-message">
+                    Your message has been sent successfully!
+                </div>
+                <div class="error-message" id="error-message">
+                    There was an error sending. Please try again.
+                </div>
+                <!-- End Alert Message -->
+
+                <form id="contact-form">
+                    <h2 class="heading">Conatct <span>Me!</span></h2>
                     <div class="field-box">
-                        <input type="text" placeholder="Full Name" required>
-                        <input type="text" placeholder="Email Address" required>
-
-                        <input type="text" placeholder="Phone Number " required>
-
-                        <input type="text" placeholder="Email Subject" required>
-                        <textarea name="" id="" placeholder="Your Message" required></textarea>
+                        <input type="text" name="name" placeholder="Please Enter Your Name ..." required min="3"
+                            max="40">
+                        <input type="email" name="email" placeholder="Please Enter Your Email ..." required>
+                        <input id="title" type="text" name="title" placeholder="Please Enter Title ..." required
+                            max="100">
+                        <textarea name="message" placeholder="Please Enter Your Message ..." required></textarea>
                     </div>
-                    <button type="submit" class="btn">Send Message</button>
+
+                    <input class="btn" type="submit" value="Send Message">
                 </form>
             </div>
         </div>
     </section>
 
+
     <!-- custom js -->
     <script src="js/script.js"></script>
+     <script src="./js/darkmode.js"></script>
+    <script src="./js/proj.js"></script>
+    <script src="./js/skills.js"></script>
 </body>
 
 </html>

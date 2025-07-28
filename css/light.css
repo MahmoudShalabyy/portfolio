@@ -1,0 +1,28 @@
+:root {
+    --bg-color: #ffffff;      /* لون الخلفية فاتح */
+    --second-bg-color: #f0efef;  /* لون ثانوي فاتح */
+    --main-color: #007bff;    /* لون رئيسي (يمكنك تغييره حسب ذوقك) */
+    --white-color: #222;      /* النص يصبح داكنًا */
+    --disabled-color: #0003;  /* لون معطل يتناسب مع الخلفية */
+    --transition-duration: 0.7s;
+}
+
+#mode-btn{
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    background-color: var(--main-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition-duration);
+    text-align: center;
+    align-items: center;
+    margin-left: 2.5rem;
+}
+
+#mode-btn i {
+    padding-top: 5px;
+}
