@@ -1,0 +1,213 @@
+{
+  "home": {
+    "name": "Mahmoud Shalaby",
+    "roles": [
+      "Full Stack Developer",
+      "Front-End Developer",
+      "Back-End Developer",
+      "Software Developer"
+    ],
+    "description": "A results-driven Full Stack Developer with a strong background in building scalable and high-performance systems. Passionate about solving complex problems and optimizing system efficiency, I leverage my analytical skills and technical expertise to develop robust back-end and Front-End solutions that align with business needs and drive continuous growth.",
+    "cvLink": "https://drive.google.com/file/d/1I912tR0T2EekPMt3eStm4_c574NcaPxL/view?usp=drive_link",
+    "profileImage": "./images/profile.jpeg",
+    "socials": [
+      { "name": "Github", "url": "https://github.com/MahmoudShalabyy", "icon": "bxl-github" },
+      { "name": "LinkedIn", "url": "https://www.linkedin.com/in/mahmoud-shalaby-58b237227/", "icon": "bxl-linkedin" },
+      { "name": "Facebook", "url": "https://web.facebook.com/ghrthygfhdfgfgdhdfgh", "icon": "bxl-facebook" },
+      { "name": "LeetCode", "url": "https://leetcode.com/u/mahmoudshalabyy4/", "icon": "bx-code-alt" },
+      { "name": "UpWork", "url": "https://www.upwork.com/freelancers/~011eaffdd3a6074307", "icon": "bxl-upwork" }
+    ]
+  },
+  "resume": {
+    "headline": "Why Hire Me ?",
+    "summary": "Extensive experience in various fields, I have strong problem-solving skills, scalable solutions, high performance, collaborative and goal-oriented.",
+    "experience": {
+      "description": "Experienced Software Developer with a strong background in backend and full-stack development. Skilled in building scalable, secure, and high-performance applications. Passionate about problem-solving, innovation, and delivering efficient digital solutions.",
+      "items": [
+        {
+          "year": "2025 - present",
+          "title": "Full Stack Web Developer",
+          "company": "Information Technology Institute (ITI) - New Capital Branch",
+          "description": "Full Stack Web Development (open source) using PHP and Angular Intensive Training Program"
+        },
+        {
+          "year": "2024 - present",
+          "title": "Full Stack Developer",
+          "company": "Upwork",
+          "description": "As a Full Stack Developer, I work on both the front-end and back-end of web applications"
+        },
+        {
+          "year": "2024 - 2025",
+          "title": "Back End Web Development Training",
+          "company": "Route Academy",
+          "description": "specializing in Node.js, Next.JS, JavaScript, Mongo DB, and REST APIs."
+        }
+      ]
+    },
+    "education": {
+      "description": "Over the years I have learned many skills and techniques in college and in intensive programs and trainings focused on the field of Full Stack Development gaining hands-on experience in this technologies and best coding practice.",
+      "items": [
+        {
+          "year": "2025",
+          "title": "Full Stack Web Development Internship",
+          "company": "Information Technology Institute (ITI)",
+          "description": "Full Stack Web Development (open source) using PHP and Angular"
+        },
+        {
+          "year": "2024 - 2025",
+          "title": "Back End Web Development Diploma",
+          "company": "Route Academy",
+          "description": "Diploma specializing in Node.js, Next.JS, JavaScript, Mongo DB, and REST APIs."
+        },
+        {
+          "year": "2019 - 2023",
+          "title": "Bachelor of Computers and Artificial Intelligence",
+          "company": "Benha University",
+          "description": "Bachelor of Computers Science and Artificial Intelligence"
+        },
+        {
+          "year": "2022 - 2023",
+          "title": "Full-Stack Web Development Bootcamp",
+          "company": "Udemy",
+          "description": "Mastering HTML, CSS, Javascript, Node.Js, React.Js, PostgreSQL, Web3"
+        }
+      ]
+    },
+    "skills": {
+      "description": "Strong <b>problem-solving</b> and <b>critical thinking</b> abilities, with <b>effective communication</b> and <b>collaboration</b> in team environments. Skilled in <b>time management</b> and <b>adapting</b> to new technologies. Demonstrated leadership and initiative in various projects.",
+      "items": [
+        { "name": "HTML5", "icon": "bxl-html5", "color": "#e34c26" },
+        { "name": "CSS3", "icon": "bxl-css3", "color": "#264de4" },
+        { "name": "JavaScript", "icon": "bxl-javascript", "color": "#f0db4f" },
+        { "name": "TypeScript", "icon": "bxl-typescript", "color": "#007acc" },
+        { "name": "Angular", "icon": "bxl-angular", "color": "#dd0031" },
+        { "name": "Bootstrap", "icon": "bxl-bootstrap", "color": "#563d7c" },
+        { "name": "Tailwind", "icon": "bxl-tailwind-css", "color": "#38bdf8" },
+        { "name": "Figma", "icon": "bxl-figma", "color": "#a259ff" },
+        { "name": "PHP", "icon": "bxl-php", "color": "#8892be" },
+        { "name": "Laravel", "icon": "bxs-component", "color": "#ff2d20" },
+        { "name": "Node.js", "icon": "bxl-nodejs", "color": "#3c873a" },
+        { "name": "Database", "icon": "bxs-data", "color": "#4db33d" },
+        { "name": "MongoDB", "icon": "bxl-mongodb", "color": "#47a248" },
+        { "name": "PostgreSQL", "icon": "bxl-postgresql", "color": "#336791" },
+        { "name": "Firebase", "icon": "bxl-firebase", "color": "#ffcb2b" },
+        { "name": "Git", "icon": "bxl-git", "color": "#f1502f" },
+        { "name": "GitHub", "icon": "bxl-github", "color": "#171515" },
+        { "name": "Code-Block", "icon": "bx-code-block", "color": "#6c63ff" },
+        { "name": "VS Code", "icon": "bxl-visual-studio", "color": "#0078d7" },
+        { "name": "Terminal", "icon": "bx-terminal", "color": "#4caf50" },
+        { "name": "Netlify", "icon": "bxl-netlify", "color": "#00c7b7" },
+        { "name": "PayPal API", "icon": "bxl-paypal", "color": "#003087" },
+        { "name": "C++", "icon": "bxl-c-plus-plus", "color": "#00599c" },
+        { "name": "Python", "icon": "bxl-python", "color": "#FFCA3A" },
+        { "name": "Java", "icon": "bxl-java", "color": "#5382a1" },
+        { "name": "Networking", "icon": "bxs-network-chart", "color": "#2b6777" },
+        { "name": "Cloud", "icon": "bxs-cloud", "color": "#00aaff" },
+        { "name": "AI", "icon": "bxs-brain", "color": "#ff6f61" }
+      ]
+    },
+    "about": {
+      "description": "I am passionate about technology and computing, with a constant desire to learn and grow. I enjoy taking on technical challenges and solving complex problems. I also believe in maintaining a balance between work and personal life, and I make sure to spend time exercising and connecting with my friends and family.",
+      "info": [
+        { "label": "Name", "value": "Mahmoud Shalaby" },
+        { "label": "Gender", "value": "Male" },
+        { "label": "Age", "value": "23 years old" },
+        { "label": "Status", "value": "Single" },
+        { "label": "City", "value": "Cairo" },
+        { "label": "Full Time", "value": "Available" },
+        { "label": "Freelance", "value": "Available" },
+        { "label": "Phone", "value": "01027326622" },
+        { "label": "Email", "value": "mahmoudshalabyyy4@gmail.com" }
+      ]
+    }
+  },
+  "projects": [
+    {
+      "title": "Paper Shelf - Online Bookstore",
+      "description": "A Full-Featured Online Bookstore Platform (Front-End & Back-End & AI) Offering Multi-Role Access (Admin, Author, User) with Advanced Authentication, Ai Summary of Books, Complete E-Commerce Experience, and Integrated Payment Gateway.",
+      "demoUrl": "https://paper-shelf-front-endd-pent.vercel.app/",
+      "githubUrl": "https://github.com/MahmoudShalabyy/PaperShelf-backEnd.git",
+      "image": "./images/project/PaperShelf.png",
+      "tech": [
+        { "name": "Angular", "icon": "bxl-angular", "color": "#dd0031" },
+        { "name": "TypeScript", "icon": "bxl-typescript", "color": "#3178c6" },
+        { "name": "Bootstrap 5", "icon": "bxl-bootstrap", "color": "#7952b3" },
+        { "name": "Node.js", "icon": "bxl-nodejs", "color": "#68a063" },
+        { "name": "MongoDB", "icon": "bxl-mongodb", "color": "#47a248" },
+        { "name": "Paypal API", "icon": "bxl-paypal", "color": "#003087" },
+        { "name": "AI Integration", "icon": "bxs-brain", "color": "#ff6f61" }
+      ]
+    },
+    {
+      "title": "Pack&Go E-commerce",
+      "description": "Complete e-commerce website for travel bags and accessories, featuring responsive web design for mobile and desktop. Integrated Firebase authentication with Google sign-in, secure checkout with PayPal, and Firestore for real-time order tracking. Included admin dashboard for product and user management.",
+      "demoUrl": "https://packgotrial.netlify.app/",
+      "githubUrl": "https://github.com/MahmoudShalabyy/PackAndGo.git",
+      "image": "./images/project/packandgo.png",
+      "tech": [
+        { "name": "HTML5", "icon": "bxl-html5", "color": "#e34c26" },
+        { "name": "CSS3", "icon": "bxl-css3", "color": "#264de4" },
+        { "name": "Javascript", "icon": "bxl-javascript", "color": "#f0db4f" },
+        { "name": "Firebase", "icon": "bxl-firebase", "color": "#ffcb2b" },
+        { "name": "Paypal API", "icon": "bxl-paypal", "color": "#003087" },
+        { "name": "Netlify Hosting", "icon": "bxl-netlify", "color": "#00c7b7" }
+      ]
+    },
+    {
+      "title": "Hair Pilot Salon With AI",
+      "description": "Smart Angular-based web app for personalized haircut suggestions using AI-powered face shape detection. Features include real-time recommendations with visual previews, online salon booking stored in Firestore, form validation, and a responsive UI. Includes service galleries, booking system, and organized navigation.",
+      "demoUrl": "https://hair-pilot.vercel.app/home",
+      "githubUrl": "https://github.com/MahmoudShalabyy/HairPilot.git",
+      "image": "./images/project/hairpilot.png",
+      "tech": [
+        { "name": "Angular", "icon": "bxl-angular", "color": "#dd0031" },
+        { "name": "face-api", "icon": "bxs-brain", "color": "#ff6f61" },
+        { "name": "Firebase", "icon": "bxl-firebase", "color": "#ffcb2b" },
+        { "name": "HTML5", "icon": "bxl-html5", "color": "#e34c26" },
+        { "name": "CSS3", "icon": "bxl-css3", "color": "#264de4" },
+        { "name": "Bootstrap5", "icon": "bxl-bootstrap", "color": "#563d7c" }
+      ]
+    },
+    {
+      "title": "MEDNIOVA - Medical Clinic",
+      "description": "Designed and developed a modern, responsive landing page for a medical clinic using vanilla HTML, CSS, and JavaScript. Features smooth scrolling, a clean menu layout with service images and pricing, and optimized responsiveness across all devices. Perfect for showcasing services and engaging patients online.",
+      "demoUrl": "https://mahmoudshalabyy.github.io/site1/3.html",
+      "githubUrl": "https://github.com/MahmoudShalabyy/site1.git",
+      "image": "./images/project/d.PNG",
+      "tech": [
+        { "name": "HTML5", "icon": "bxl-html5", "color": "#e34c26" },
+        { "name": "CSS3", "icon": "bxl-css3", "color": "#264de4" },
+        { "name": "Javascript", "icon": "bxl-javascript", "color": "#f0db4f" },
+        { "name": "Animation", "icon": "bx-font", "color": "#000000" },
+        { "name": "GitHub", "icon": "bxl-github", "color": "#171515" }
+      ]
+    },
+    {
+      "title": "Coffee Corner Landing Page",
+      "description": "Designed and developed a modern, responsive landing page for a coffee shop using vanilla HTML, CSS, and JavaScript. Features smooth scrolling, a clean menu layout with product images and pricing, and optimized responsiveness across all devices. Perfect for showcasing services and engaging customers online.",
+      "demoUrl": "https://badawy24.github.io/Coffee_Corner/",
+      "githubUrl": "https://github.com/Badawy24/Coffee_Corner",
+      "image": "./images/project/coffeecorner.png",
+      "tech": [
+        { "name": "HTML5", "icon": "bxl-html5", "color": "#e34c26" },
+        { "name": "CSS3", "icon": "bxl-css3", "color": "#264de4" },
+        { "name": "Javascript", "icon": "bxl-javascript", "color": "#f0db4f" },
+        { "name": "Animation", "icon": "bx-font", "color": "#000000" },
+        { "name": "GitHub", "icon": "bxl-github", "color": "#171515" }
+      ]
+    }
+  ],
+  "contact": {
+    "heading": "Let's Work Together",
+    "description": "If you need a professional website design or want to build a website from scratch, I'm here to help! I can also create creative landing pages that boost your conversion rate. Additionally, I have experience in website management and providing technical support to ensure smooth and efficient operation.",
+    "phone": "+20 1027326622",
+    "email": "mahmoudshalabyyy4@gmail.com",
+    "socials": [
+      { "name": "Github", "url": "https://github.com/MahmoudShalabyy", "icon": "bxl-github" },
+      { "name": "LinkedIn", "url": "https://www.linkedin.com/in/mahmoud-shalaby-58b237227/", "icon": "bxl-linkedin" },
+      { "name": "Facebook", "url": "https://web.facebook.com/ghrthygfhdfgfgdhdfgh", "icon": "bxl-facebook" },
+      { "name": "LeetCode", "url": "https://leetcode.com/u/mahmoudshalabyy4/", "icon": "bx-code-alt" },
+      { "name": "UpWork", "url": "https://www.upwork.com/freelancers/~011eaffdd3a6074307", "icon": "bxl-upwork" }
+    ]
+  }
+}

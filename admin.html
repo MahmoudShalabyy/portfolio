@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Portfolio</title>
+    <link href='https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <!-- Login Screen -->
+    <div id="login-screen" class="login-screen">
+        <div class="login-box">
+            <i class='bx bx-lock-alt login-icon'></i>
+            <h1>Admin Access</h1>
+            <p>Enter password to continue</p>
+            <form id="login-form">
+                <input type="email" id="email-input" placeholder="Email" required autocomplete="email">
+                <div class="password-wrap">
+                    <input type="password" id="password-input" placeholder="Password" required autocomplete="current-password">
+                    <button type="button" id="toggle-password" class="toggle-password" aria-label="Show password">
+                        <i class='bx bx-show'></i>
+                    </button>
+                </div>
+                <button type="submit" id="login-submit">Sign In</button>
+            </form>
+            <p id="login-error" class="login-error"></p>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="dashboard" hidden>
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>Dashboard</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <button class="nav-item active" data-tab="home"><i class='bx bx-home'></i> Home</button>
+                <button class="nav-item" data-tab="resume"><i class='bx bx-file'></i> Resume</button>
+                <button class="nav-item" data-tab="projects"><i class='bx bx-briefcase'></i> Projects</button>
+                <button class="nav-item" data-tab="contact"><i class='bx bx-envelope'></i> Contact</button>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="preview-btn" class="btn-ghost"><i class='bx bx-link-external'></i> Preview Site</button>
+                <button id="save-btn" class="btn-primary"><i class='bx bx-cloud-upload'></i> Publish Changes</button>
+                <button id="download-btn" class="btn-ghost"><i class='bx bx-download'></i> Download JSON</button>
+                <button id="logout-btn" class="btn-ghost"><i class='bx bx-log-out'></i> Logout</button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="save-bar">
+                <span id="save-status" class="save-status">All changes saved locally</span>
+                <span class="help-text">Changes save to your browser. Download JSON to publish.</span>
+            </div>
+
+            <!-- HOME TAB -->
+            <section class="tab-panel active" data-panel="home">
+                <h1 class="panel-title">Home Section</h1>
+
+                <div class="field">
+                    <label>Name</label>
+                    <input type="text" id="home-name">
+                </div>
+
+                <div class="field">
+                    <label>Description</label>
+                    <textarea id="home-description" rows="5"></textarea>
+                </div>
+
+                <div class="field">
+                    <label>CV Link</label>
+                    <input type="url" id="home-cv-link">
+                </div>
+
+                <div class="field">
+                    <label>Profile Image Path</label>
+                    <input type="text" id="home-profile-image">
+                    <small>e.g. <code>./images/profile.jpeg</code></small>
+                </div>
+
+                <div class="field">
+                    <label>Roles (animated text)</label>
+                    <div id="home-roles" class="list-editor"></div>
+                    <button type="button" class="btn-add" data-action="add-role"><i class='bx bx-plus'></i> Add Role</button>
+                </div>
+
+                <div class="field">
+                    <label>Social Links</label>
+                    <div id="home-socials" class="list-editor"></div>
+                    <button type="button" class="btn-add" data-action="add-home-social"><i class='bx bx-plus'></i> Add Social</button>
+                </div>
+            </section>
+
+            <!-- RESUME TAB -->
+            <section class="tab-panel" data-panel="resume">
+                <h1 class="panel-title">Resume Section</h1>
+
+                <div class="field">
+                    <label>Headline</label>
+                    <input type="text" id="resume-headline">
+                </div>
+                <div class="field">
+                    <label>Summary</label>
+                    <textarea id="resume-summary" rows="3"></textarea>
+                </div>
+
+                <div class="sub-tabs">
+                    <button class="sub-tab active" data-subtab="experience">Experience</button>
+                    <button class="sub-tab" data-subtab="education">Education</button>
+                    <button class="sub-tab" data-subtab="skills">Skills</button>
+                    <button class="sub-tab" data-subtab="about">About Me</button>
+                </div>
+
+                <div class="sub-panel active" data-subpanel="experience">
+                    <div class="field">
+                        <label>Description</label>
+                        <textarea id="experience-description" rows="3"></textarea>
+                    </div>
+                    <div class="field">
+                        <label>Items</label>
+                        <div id="experience-items" class="list-editor"></div>
+                        <button type="button" class="btn-add" data-action="add-experience"><i class='bx bx-plus'></i> Add Experience</button>
+                    </div>
+                </div>
+
+                <div class="sub-panel" data-subpanel="education">
+                    <div class="field">
+                        <label>Description</label>
+                        <textarea id="education-description" rows="3"></textarea>
+                    </div>
+                    <div class="field">
+                        <label>Items</label>
+                        <div id="education-items" class="list-editor"></div>
+                        <button type="button" class="btn-add" data-action="add-education"><i class='bx bx-plus'></i> Add Education</button>
+                    </div>
+                </div>
+
+                <div class="sub-panel" data-subpanel="skills">
+                    <div class="field">
+                        <label>Description (HTML allowed)</label>
+                        <textarea id="skills-description" rows="3"></textarea>
+                    </div>
+                    <div class="field">
+                        <label>Skills</label>
+                        <div id="skills-items" class="list-editor grid-2"></div>
+                        <button type="button" class="btn-add" data-action="add-skill"><i class='bx bx-plus'></i> Add Skill</button>
+                    </div>
+                </div>
+
+                <div class="sub-panel" data-subpanel="about">
+                    <div class="field">
+                        <label>Description</label>
+                        <textarea id="about-description" rows="3"></textarea>
+                    </div>
+                    <div class="field">
+                        <label>Info</label>
+                        <div id="about-items" class="list-editor grid-2"></div>
+                        <button type="button" class="btn-add" data-action="add-about"><i class='bx bx-plus'></i> Add Info Field</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECTS TAB -->
+            <section class="tab-panel" data-panel="projects">
+                <h1 class="panel-title">Projects</h1>
+                <div id="projects-list" class="list-editor"></div>
+                <button type="button" class="btn-add" data-action="add-project"><i class='bx bx-plus'></i> Add Project</button>
+            </section>
+
+            <!-- CONTACT TAB -->
+            <section class="tab-panel" data-panel="contact">
+                <h1 class="panel-title">Contact Section</h1>
+
+                <div class="field">
+                    <label>Heading</label>
+                    <input type="text" id="contact-heading">
+                </div>
+                <div class="field">
+                    <label>Description</label>
+                    <textarea id="contact-description" rows="4"></textarea>
+                </div>
+                <div class="field">
+                    <label>Phone</label>
+                    <input type="text" id="contact-phone">
+                </div>
+                <div class="field">
+                    <label>Email</label>
+                    <input type="email" id="contact-email">
+                </div>
+                <div class="field">
+                    <label>Social Links</label>
+                    <div id="contact-socials" class="list-editor"></div>
+                    <button type="button" class="btn-add" data-action="add-contact-social"><i class='bx bx-plus'></i> Add Social</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="./js/config.js"></script>
+    <script src="./js/supabase-client.js"></script>
+    <script src="./js/admin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+.claude/
+.sixth/
+.DS_Store
+Thumbs.db
+node_modules/
+.env
+.env.local
+*.log

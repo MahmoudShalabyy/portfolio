@@ -13,10 +13,13 @@
 
 html {
     font-size: 10px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 8rem;
 }
 
 body {
     color: var(--white-color);
+    background: var(--bg-color);
     scrollbar-color: var(--main-color) var(--second-bg-color);
 }
 
@@ -27,8 +30,8 @@ header {
     left: 0;
     width: 100%;
     padding: 2rem 9%;
-    /* 2rem = 2*10px(font-size:html) = 20px */
     background-color: var(--bg-color);
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
 
     display: flex;
     justify-content: space-between;
@@ -64,38 +67,23 @@ nav a.active {
 }
 
 section {
-    position: absolute;
     width: 100%;
-    height: 100%;
-    padding: 16rem 9% 2rem;
+    min-height: 100vh;
+    padding: 12rem 9% 6rem;
     background: var(--bg-color);
-
-    visibility: hidden;
-    opacity: 0;
-    overflow: hidden;
+    scroll-margin-top: 8rem;
 }
 
-section.active {
-    animation: show-content 0.5s linear forwards;
-    animation-delay: 0.4s;
-
-}
-
-@keyframes show-content {
-    100% {
-        visibility: visible;
-        opacity: 1;
-        overflow: auto;
-    }
+.section-heading {
+    margin-bottom: 5rem;
 }
 
 .home {
     display: flex;
     align-items: center;
     gap: 5rem;
-    padding: 10rem 9% 2rem;
-
-    /*50px*/
+    padding: 10rem 9% 6rem;
+    min-height: 100vh;
 }
 
 .home-details h1 {
@@ -694,6 +682,37 @@ section.active {
     visibility: visible;
 }
 
+/* Footer */
+
+.footer {
+    background: var(--second-bg-color);
+    padding: 3rem 9%;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.footer p {
+    color: var(--white-color);
+}
+
+.contact-socials {
+    gap: 1.5rem;
+}
+
+.contact-socials a {
+    color: var(--main-color);
+    font-size: 3rem;
+    display: inline-flex;
+    padding: 1rem;
+    background: var(--second-bg-color);
+    border-radius: 0.6rem;
+    transition: var(--transition-duration);
+}
+
+.contact-socials a:hover {
+    transform: translateY(-0.3rem);
+}
+
 /* Responsive Screens */
 
 @media screen and (max-width: 1200px) {
@@ -708,7 +727,11 @@ section.active {
     }
 
     section {
-        padding: 10rem 4% 2rem;
+        padding: 10rem 4% 4rem;
+    }
+
+    .footer {
+        padding: 3rem 4%;
     }
 }
 
@@ -731,9 +754,13 @@ section.active {
         padding: 1rem 0;
         background: var(--bg-color);
         border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
-        box-shadow: 0.5rem 1rem rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
         text-align: center;
         display: none;
+    }
+
+    header nav.open {
+        display: block;
     }
 
     nav a {
