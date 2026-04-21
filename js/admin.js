@@ -155,6 +155,24 @@
         });
         saveBtn.addEventListener('click', publishChanges);
 
+        const reloadBtn = document.getElementById('reload-btn');
+        if (reloadBtn) {
+            reloadBtn.addEventListener('click', async () => {
+                if (!confirm('Reload data from data.json file? This will discard your unsaved changes and load the latest data.json. You will need to click Publish Changes to save to Supabase.')) return;
+                try {
+                    localStorage.removeItem(DRAFT_KEY);
+                    const res = await fetch('./data.json?t=' + Date.now());
+                    data = await res.json();
+                    renderAll();
+                    saveDraft();
+                    setStatus('Loaded from data.json — click Publish Changes to sync', 'unsaved');
+                    dirty = true;
+                } catch (err) {
+                    alert('Failed to reload: ' + err.message);
+                }
+            });
+        }
+
         document.addEventListener('click', (e) => {
             const action = e.target.closest('[data-action]')?.dataset.action;
             if (!action) return;

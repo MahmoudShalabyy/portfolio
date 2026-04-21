@@ -100,20 +100,21 @@
                     <i class='bx ${escapeHtml(t.icon)}' style='color:${escapeHtml(t.color)}'></i>
                 </span>
             `).join('');
+            const demoLink = p.demoUrl ? `
+                <a href="${escapeHtml(p.demoUrl)}" target="_blank" rel="noopener" data-tooltip="Live Demo">
+                    <i class='bx bx-arrow-back'></i>
+                </a>` : '';
+            const githubLink = p.githubUrl ? `
+                <a href="${escapeHtml(p.githubUrl)}" target="_blank" rel="noopener" data-tooltip="GitHub">
+                    <i class='bx bxl-github'></i>
+                </a>` : '';
             return `
                 <div class="portfolio-details ${i === 0 ? 'active' : ''}">
                     <p class="numb">${num}</p>
                     <h3>${escapeHtml(p.title)}</h3>
                     <p>${escapeHtml(p.description)}</p>
                     <div class="tech"><p>${techHtml}</p></div>
-                    <div class="live-github">
-                        <a href="${escapeHtml(p.demoUrl)}" target="_blank" rel="noopener" data-tooltip="Live Demo">
-                            <i class='bx bx-arrow-back'></i>
-                        </a>
-                        <a href="${escapeHtml(p.githubUrl)}" target="_blank" rel="noopener" data-tooltip="GitHub">
-                            <i class='bx bxl-github'></i>
-                        </a>
-                    </div>
+                    <div class="live-github">${demoLink}${githubLink}</div>
                 </div>
             `;
         }).join('');

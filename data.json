@@ -1,13 +1,13 @@
 {
   "home": {
-    "name": "Mahmoud Shalaby",
+    "name": "Mahmoud El-Sayed Shalaby",
     "roles": [
       "Full Stack Developer",
+      "Laravel Developer",
       "Front-End Developer",
-      "Back-End Developer",
-      "Software Developer"
+      "Back-End Developer"
     ],
-    "description": "A results-driven Full Stack Developer with a strong background in building scalable and high-performance systems. Passionate about solving complex problems and optimizing system efficiency, I leverage my analytical skills and technical expertise to develop robust back-end and Front-End solutions that align with business needs and drive continuous growth.",
+    "description": "Full Stack Developer with hands-on experience in Laravel, currently building and maintaining multi-tenant web applications, ERP modules, and e-learning systems. Comfortable working with RESTful APIs, payment integrations, and modern front-end tools. Quick learner who thrives in collaborative environments.",
     "cvLink": "https://drive.google.com/file/d/1I912tR0T2EekPMt3eStm4_c574NcaPxL/view?usp=drive_link",
     "profileImage": "./images/profile.jpeg",
     "socials": [
@@ -22,19 +22,25 @@
     "headline": "Why Hire Me ?",
     "summary": "Extensive experience in various fields, I have strong problem-solving skills, scalable solutions, high performance, collaborative and goal-oriented.",
     "experience": {
-      "description": "Experienced Software Developer with a strong background in backend and full-stack development. Skilled in building scalable, secure, and high-performance applications. Passionate about problem-solving, innovation, and delivering efficient digital solutions.",
+      "description": "Experienced Full Stack Laravel Developer with a strong background in multi-tenant systems, ERP modules, and e-learning platforms. Skilled in building scalable, secure, and high-performance applications. Passionate about problem-solving, innovation, and delivering efficient digital solutions.",
       "items": [
         {
-          "year": "2025 - present",
-          "title": "Full Stack Web Developer",
-          "company": "Information Technology Institute (ITI) - New Capital Branch",
-          "description": "Full Stack Web Development (open source) using PHP and Angular Intensive Training Program"
+          "year": "08/2025 - Present",
+          "title": "Full Stack Laravel Developer",
+          "company": "Hunt ERP",
+          "description": "Built a multi-tenant clinic management system from scratch, developed a complete e-learning module with VdoCipher video streaming, created the ZMK website and admin dashboard (Laravel 12), and implemented a SaaS subscription system with Paymob integration. Enhanced existing ERP modules (Accounting, HR, Inventory, CRM, POS)."
         },
         {
           "year": "2024 - present",
           "title": "Full Stack Developer",
           "company": "Upwork",
           "description": "As a Full Stack Developer, I work on both the front-end and back-end of web applications"
+        },
+        {
+          "year": "03/2025 - 08/2025",
+          "title": "Full Stack Development Intensive Program",
+          "company": "Information Technology Institute (ITI) - New Capital Branch",
+          "description": "Full Stack Development (Open-Source Track) Intensive Program using PHP, Laravel, and Angular."
         },
         {
           "year": "2024 - 2025",
@@ -48,22 +54,22 @@
       "description": "Over the years I have learned many skills and techniques in college and in intensive programs and trainings focused on the field of Full Stack Development gaining hands-on experience in this technologies and best coding practice.",
       "items": [
         {
-          "year": "2025",
+          "year": "2019 - 2023",
+          "title": "Bachelor's in Computers and Artificial Intelligence",
+          "company": "Benha University",
+          "description": "GPA: 3.33 (84.6%). Graduation Project: Smart Glasses For Blind Using Machine Learning - Grade: A+."
+        },
+        {
+          "year": "03/2025 - 08/2025",
           "title": "Full Stack Web Development Internship",
           "company": "Information Technology Institute (ITI)",
-          "description": "Full Stack Web Development (open source) using PHP and Angular"
+          "description": "Full Stack Web Development (Open-Source Track) Intensive Program using PHP, Laravel, and Angular."
         },
         {
           "year": "2024 - 2025",
           "title": "Back End Web Development Diploma",
           "company": "Route Academy",
           "description": "Diploma specializing in Node.js, Next.JS, JavaScript, Mongo DB, and REST APIs."
-        },
-        {
-          "year": "2019 - 2023",
-          "title": "Bachelor of Computers and Artificial Intelligence",
-          "company": "Benha University",
-          "description": "Bachelor of Computers Science and Artificial Intelligence"
         },
         {
           "year": "2022 - 2023",
@@ -109,7 +115,7 @@
     "about": {
       "description": "I am passionate about technology and computing, with a constant desire to learn and grow. I enjoy taking on technical challenges and solving complex problems. I also believe in maintaining a balance between work and personal life, and I make sure to spend time exercising and connecting with my friends and family.",
       "info": [
-        { "label": "Name", "value": "Mahmoud Shalaby" },
+        { "label": "Name", "value": "Mahmoud El-Sayed Shalaby" },
         { "label": "Gender", "value": "Male" },
         { "label": "Age", "value": "23 years old" },
         { "label": "Status", "value": "Single" },
@@ -123,8 +129,66 @@
   },
   "projects": [
     {
+      "title": "Tadawi - Healthcare Connectivity Platform",
+      "description": "A web-based multi-stakeholder platform connecting Patients, Doctors, Donations, and Pharmacies in Egypt. Features AI-powered drug alternatives, OTP authentication, integrated payments, real-time stock visibility, and digital prescriptions to manage medicine availability and provide safe alternatives.",
+      "demoUrl": "",
+      "githubUrl": "https://github.com/MahmoudShalabyy/Tadawi-Frontend",
+      "image": "",
+      "tech": [
+        { "name": "React", "icon": "bxl-react", "color": "#61dafb" },
+        { "name": "Laravel", "icon": "bxs-component", "color": "#ff2d20" },
+        { "name": "MySQL", "icon": "bxs-data", "color": "#00758f" },
+        { "name": "Laravel Sanctum", "icon": "bxs-lock-alt", "color": "#ff2d20" },
+        { "name": "AI Integration", "icon": "bxs-brain", "color": "#ff6f61" },
+        { "name": "REST API", "icon": "bx-code-curly", "color": "#6c63ff" }
+      ]
+    },
+    {
+      "title": "Multi-Tenant Clinic Management System",
+      "description": "Built from scratch as part of Hunt ERP - a comprehensive multi-tenant clinic management system handling clinic registration, appointments, patient records, prescriptions, invoices, and expense tracking. Designed to serve multiple clinics from a single platform with isolated data per tenant.",
+      "demoUrl": "https://clinics.huntech.net/",
+      "githubUrl": "",
+      "image": "",
+      "tech": [
+        { "name": "Laravel", "icon": "bxs-component", "color": "#ff2d20" },
+        { "name": "PHP", "icon": "bxl-php", "color": "#8892be" },
+        { "name": "MySQL", "icon": "bxs-data", "color": "#00758f" },
+        { "name": "Multi-Tenancy", "icon": "bx-buildings", "color": "#6c63ff" },
+        { "name": "Bootstrap", "icon": "bxl-bootstrap", "color": "#7952b3" }
+      ]
+    },
+    {
+      "title": "ZMK E-Learning Platform",
+      "description": "Complete e-learning platform built from scratch using Laravel 12. Features include student portal with Paymob payments, OTP authentication, progress tracking, instructor content management, course management, video streaming via VdoCipher, quizzes, certificates, offline bookings, and a rewards system.",
+      "demoUrl": "https://zmk-eg.com/",
+      "githubUrl": "",
+      "image": "",
+      "tech": [
+        { "name": "Laravel 12", "icon": "bxs-component", "color": "#ff2d20" },
+        { "name": "PHP", "icon": "bxl-php", "color": "#8892be" },
+        { "name": "MySQL", "icon": "bxs-data", "color": "#00758f" },
+        { "name": "VdoCipher", "icon": "bxs-videos", "color": "#4285f4" },
+        { "name": "Paymob", "icon": "bxs-credit-card", "color": "#1e88e5" },
+        { "name": "Bootstrap", "icon": "bxl-bootstrap", "color": "#7952b3" }
+      ]
+    },
+    {
+      "title": "SaaS Subscription System",
+      "description": "Implemented a complete SaaS subscription system with Paymob payment integration, self-service renewal, modular activation, extra-user purchases, and automated subscription lifecycle management. Provides flexible billing and plan management for ERP clients.",
+      "demoUrl": "https://subscription.hunt-eg.com/login",
+      "githubUrl": "",
+      "image": "",
+      "tech": [
+        { "name": "Laravel", "icon": "bxs-component", "color": "#ff2d20" },
+        { "name": "PHP", "icon": "bxl-php", "color": "#8892be" },
+        { "name": "MySQL", "icon": "bxs-data", "color": "#00758f" },
+        { "name": "Paymob", "icon": "bxs-credit-card", "color": "#1e88e5" },
+        { "name": "REST API", "icon": "bx-code-curly", "color": "#6c63ff" }
+      ]
+    },
+    {
       "title": "Paper Shelf - Online Bookstore",
-      "description": "A Full-Featured Online Bookstore Platform (Front-End & Back-End & AI) Offering Multi-Role Access (Admin, Author, User) with Advanced Authentication, Ai Summary of Books, Complete E-Commerce Experience, and Integrated Payment Gateway.",
+      "description": "A Full-Featured Online Bookstore Platform (Front-End & Back-End & AI) Offering Multi-Role Access (Admin, Author, User) with Advanced Authentication (JWT, OTP), AI Summary of Books via OpenAI API, Complete E-Commerce Experience, and Integrated Stripe Payment Gateway.",
       "demoUrl": "https://paper-shelf-front-endd-pent.vercel.app/",
       "githubUrl": "https://github.com/MahmoudShalabyy/PaperShelf-backEnd.git",
       "image": "./images/project/PaperShelf.png",
@@ -134,7 +198,7 @@
         { "name": "Bootstrap 5", "icon": "bxl-bootstrap", "color": "#7952b3" },
         { "name": "Node.js", "icon": "bxl-nodejs", "color": "#68a063" },
         { "name": "MongoDB", "icon": "bxl-mongodb", "color": "#47a248" },
-        { "name": "Paypal API", "icon": "bxl-paypal", "color": "#003087" },
+        { "name": "Stripe", "icon": "bxs-credit-card", "color": "#635bff" },
         { "name": "AI Integration", "icon": "bxs-brain", "color": "#ff6f61" }
       ]
     },
