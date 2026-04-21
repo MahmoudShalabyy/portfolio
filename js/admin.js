@@ -271,6 +271,42 @@
         cur[path[path.length - 1]] = value;
     };
 
+    // ============ IMAGE COMPRESSION ============
+    const compressImage = (file, maxDimension = 1600, quality = 0.82) => new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onerror = () => reject(new Error('Failed to read file'));
+        reader.onload = (e) => {
+            const img = new Image();
+            img.onerror = () => reject(new Error('Failed to load image'));
+            img.onload = () => {
+                let { width, height } = img;
+                if (width > maxDimension || height > maxDimension) {
+                    if (width > height) {
+                        height = Math.round(height * (maxDimension / width));
+                        width = maxDimension;
+                    } else {
+                        width = Math.round(width * (maxDimension / height));
+                        height = maxDimension;
+                    }
+                }
+                const canvas = document.createElement('canvas');
+                canvas.width = width;
+                canvas.height = height;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, width, height);
+                const mime = file.type === 'image/png' ? 'image/png' : 'image/jpeg';
+                canvas.toBlob((blob) => {
+                    if (!blob) return reject(new Error('Compression failed'));
+                    const ext = mime === 'image/png' ? 'png' : 'jpg';
+                    const compressed = new File([blob], `compressed.${ext}`, { type: mime });
+                    resolve(compressed);
+                }, mime, quality);
+            };
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    });
+
     // ============ IMAGE UPLOAD ============
     const attachImageUpload = (input, folder) => {
         const wrap = document.createElement('div');
@@ -298,7 +334,10 @@
             fileBtn.disabled = true;
             fileBtn.innerHTML = "<i class='bx bx-loader bx-spin'></i>";
             try {
-                const url = await window.SupabaseAPI.uploadImage(file, folder);
+                fileBtn.innerHTML = "<i class='bx bx-loader bx-spin'></i> Compressing...";
+                const compressed = await compressImage(file);
+                fileBtn.innerHTML = "<i class='bx bx-loader bx-spin'></i> Uploading...";
+                const url = await window.SupabaseAPI.uploadImage(compressed, folder);
                 input.value = url;
                 input.dispatchEvent(new Event('input', { bubbles: true }));
             } catch (err) {

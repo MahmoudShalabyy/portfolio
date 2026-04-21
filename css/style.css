@@ -324,17 +324,39 @@ section {
     max-width: 100%;
     background-color: var(--second-bg-color);
     border-radius: 0.8rem;
-    padding: 2.5rem 2.5rem;
+    padding: 2rem 2.2rem;
     min-height: 22rem;
+    max-height: 28rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 0.6rem;
+    overflow-y: auto;
     overflow-wrap: break-word;
+    scrollbar-width: thin;
+    scrollbar-color: var(--main-color) transparent;
+}
+
+.resume-list .resume-item::-webkit-scrollbar {
+    width: 6px;
+}
+
+.resume-list .resume-item::-webkit-scrollbar-thumb {
+    background: var(--main-color);
+    border-radius: 3px;
+}
+
+.resume-list .resume-item::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 .resume-list .resume-item p {
     line-height: 1.5;
+    font-size: 1.5rem;
+}
+
+.resume-list .resume-item h3 {
+    font-size: 1.9rem;
 }
 
 .resume-item .year {
