@@ -324,12 +324,17 @@ section {
     max-width: 100%;
     background-color: var(--second-bg-color);
     border-radius: 0.8rem;
-    padding: 3rem 2.5rem;
-    height: 22rem;
+    padding: 2.5rem 2.5rem;
+    min-height: 22rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    overflow-wrap: break-word;
+}
 
+.resume-list .resume-item p {
+    line-height: 1.5;
 }
 
 .resume-item .year {

@@ -28,7 +28,7 @@
           "year": "08/2025 - Present",
           "title": "Full Stack Laravel Developer",
           "company": "Hunt ERP",
-          "description": "Built a multi-tenant clinic management system from scratch, developed a complete e-learning module with VdoCipher video streaming, created the ZMK website and admin dashboard (Laravel 12), and implemented a SaaS subscription system with Paymob integration. Enhanced existing ERP modules (Accounting, HR, Inventory, CRM, POS)."
+          "description": "Building multi-tenant SaaS systems, ERP modules, and e-learning platforms using Laravel 12 with Paymob and VdoCipher integrations."
         },
         {
           "year": "2024 - present",
@@ -39,8 +39,8 @@
         {
           "year": "03/2025 - 08/2025",
           "title": "Full Stack Development Intensive Program",
-          "company": "Information Technology Institute (ITI) - New Capital Branch",
-          "description": "Full Stack Development (Open-Source Track) Intensive Program using PHP, Laravel, and Angular."
+          "company": "ITI - New Capital Branch",
+          "description": "Open-Source Track using PHP, Laravel, and Angular."
         },
         {
           "year": "2024 - 2025",
@@ -55,15 +55,15 @@
       "items": [
         {
           "year": "2019 - 2023",
-          "title": "Bachelor's in Computers and Artificial Intelligence",
+          "title": "Bachelor's in Computers and AI",
           "company": "Benha University",
-          "description": "GPA: 3.33 (84.6%). Graduation Project: Smart Glasses For Blind Using Machine Learning - Grade: A+."
+          "description": "GPA: 3.33 (84.6%). Graduation Project: Smart Glasses For Blind Using ML — Grade: A+."
         },
         {
           "year": "03/2025 - 08/2025",
           "title": "Full Stack Web Development Internship",
-          "company": "Information Technology Institute (ITI)",
-          "description": "Full Stack Web Development (Open-Source Track) Intensive Program using PHP, Laravel, and Angular."
+          "company": "ITI",
+          "description": "Open-Source Track using PHP, Laravel, and Angular."
         },
         {
           "year": "2024 - 2025",
@@ -129,37 +129,8 @@
   },
   "projects": [
     {
-      "title": "Tadawi - Healthcare Connectivity Platform",
-      "description": "A web-based multi-stakeholder platform connecting Patients, Doctors, Donations, and Pharmacies in Egypt. Features AI-powered drug alternatives, OTP authentication, integrated payments, real-time stock visibility, and digital prescriptions to manage medicine availability and provide safe alternatives.",
-      "demoUrl": "",
-      "githubUrl": "https://github.com/MahmoudShalabyy/Tadawi-Frontend",
-      "image": "",
-      "tech": [
-        { "name": "React", "icon": "bxl-react", "color": "#61dafb" },
-        { "name": "Laravel", "icon": "bxs-component", "color": "#ff2d20" },
-        { "name": "MySQL", "icon": "bxs-data", "color": "#00758f" },
-        { "name": "Laravel Sanctum", "icon": "bxs-lock-alt", "color": "#ff2d20" },
-        { "name": "AI Integration", "icon": "bxs-brain", "color": "#ff6f61" },
-        { "name": "REST API", "icon": "bx-code-curly", "color": "#6c63ff" }
-      ]
-    },
-    {
-      "title": "Multi-Tenant Clinic Management System",
-      "description": "Built from scratch as part of Hunt ERP - a comprehensive multi-tenant clinic management system handling clinic registration, appointments, patient records, prescriptions, invoices, and expense tracking. Designed to serve multiple clinics from a single platform with isolated data per tenant.",
-      "demoUrl": "https://clinics.huntech.net/",
-      "githubUrl": "",
-      "image": "",
-      "tech": [
-        { "name": "Laravel", "icon": "bxs-component", "color": "#ff2d20" },
-        { "name": "PHP", "icon": "bxl-php", "color": "#8892be" },
-        { "name": "MySQL", "icon": "bxs-data", "color": "#00758f" },
-        { "name": "Multi-Tenancy", "icon": "bx-buildings", "color": "#6c63ff" },
-        { "name": "Bootstrap", "icon": "bxl-bootstrap", "color": "#7952b3" }
-      ]
-    },
-    {
       "title": "ZMK E-Learning Platform",
-      "description": "Complete e-learning platform built from scratch using Laravel 12. Features include student portal with Paymob payments, OTP authentication, progress tracking, instructor content management, course management, video streaming via VdoCipher, quizzes, certificates, offline bookings, and a rewards system.",
+      "description": "Full e-learning platform built with Laravel 12. Features student portal, Paymob payments, OTP auth, VdoCipher video streaming, quizzes, certificates, and progress tracking.",
       "demoUrl": "https://zmk-eg.com/",
       "githubUrl": "",
       "image": "",
@@ -173,8 +144,22 @@
       ]
     },
     {
+      "title": "Multi-Tenant Clinic Management System",
+      "description": "Multi-tenant SaaS for clinics handling registration, appointments, patient records, prescriptions, invoices, and expense tracking with isolated data per tenant.",
+      "demoUrl": "https://clinics.huntech.net/",
+      "githubUrl": "",
+      "image": "",
+      "tech": [
+        { "name": "Laravel", "icon": "bxs-component", "color": "#ff2d20" },
+        { "name": "PHP", "icon": "bxl-php", "color": "#8892be" },
+        { "name": "MySQL", "icon": "bxs-data", "color": "#00758f" },
+        { "name": "Multi-Tenancy", "icon": "bx-buildings", "color": "#6c63ff" },
+        { "name": "Bootstrap", "icon": "bxl-bootstrap", "color": "#7952b3" }
+      ]
+    },
+    {
       "title": "SaaS Subscription System",
-      "description": "Implemented a complete SaaS subscription system with Paymob payment integration, self-service renewal, modular activation, extra-user purchases, and automated subscription lifecycle management. Provides flexible billing and plan management for ERP clients.",
+      "description": "Subscription platform with Paymob payments, self-service renewal, modular activation, extra-user purchases, and automated lifecycle management for ERP clients.",
       "demoUrl": "https://subscription.hunt-eg.com/login",
       "githubUrl": "",
       "image": "",
@@ -187,8 +172,23 @@
       ]
     },
     {
+      "title": "Tadawi - Healthcare Platform",
+      "description": "Multi-stakeholder platform connecting patients, doctors, and pharmacies with AI-powered drug alternatives, OTP auth, digital prescriptions, and real-time stock visibility.",
+      "demoUrl": "",
+      "githubUrl": "https://github.com/MahmoudShalabyy/Tadawi-Frontend",
+      "image": "",
+      "tech": [
+        { "name": "React", "icon": "bxl-react", "color": "#61dafb" },
+        { "name": "Laravel", "icon": "bxs-component", "color": "#ff2d20" },
+        { "name": "MySQL", "icon": "bxs-data", "color": "#00758f" },
+        { "name": "Laravel Sanctum", "icon": "bxs-lock-alt", "color": "#ff2d20" },
+        { "name": "AI Integration", "icon": "bxs-brain", "color": "#ff6f61" },
+        { "name": "REST API", "icon": "bx-code-curly", "color": "#6c63ff" }
+      ]
+    },
+    {
       "title": "Paper Shelf - Online Bookstore",
-      "description": "A Full-Featured Online Bookstore Platform (Front-End & Back-End & AI) Offering Multi-Role Access (Admin, Author, User) with Advanced Authentication (JWT, OTP), AI Summary of Books via OpenAI API, Complete E-Commerce Experience, and Integrated Stripe Payment Gateway.",
+      "description": "Full-featured online bookstore with multi-role access (Admin, Author, User), JWT/OTP authentication, AI book summaries via OpenAI, and Stripe payment integration.",
       "demoUrl": "https://paper-shelf-front-endd-pent.vercel.app/",
       "githubUrl": "https://github.com/MahmoudShalabyy/PaperShelf-backEnd.git",
       "image": "./images/project/PaperShelf.png",
@@ -204,7 +204,7 @@
     },
     {
       "title": "Pack&Go E-commerce",
-      "description": "Complete e-commerce website for travel bags and accessories, featuring responsive web design for mobile and desktop. Integrated Firebase authentication with Google sign-in, secure checkout with PayPal, and Firestore for real-time order tracking. Included admin dashboard for product and user management.",
+      "description": "Responsive e-commerce site for travel bags with Firebase auth (Google sign-in), PayPal checkout, Firestore order tracking, and admin dashboard for product management.",
       "demoUrl": "https://packgotrial.netlify.app/",
       "githubUrl": "https://github.com/MahmoudShalabyy/PackAndGo.git",
       "image": "./images/project/packandgo.png",
@@ -219,7 +219,7 @@
     },
     {
       "title": "Hair Pilot Salon With AI",
-      "description": "Smart Angular-based web app for personalized haircut suggestions using AI-powered face shape detection. Features include real-time recommendations with visual previews, online salon booking stored in Firestore, form validation, and a responsive UI. Includes service galleries, booking system, and organized navigation.",
+      "description": "Angular web app for personalized haircut suggestions using AI face shape detection, with real-time recommendations, salon booking via Firestore, and responsive UI.",
       "demoUrl": "https://hair-pilot.vercel.app/home",
       "githubUrl": "https://github.com/MahmoudShalabyy/HairPilot.git",
       "image": "./images/project/hairpilot.png",
@@ -234,7 +234,7 @@
     },
     {
       "title": "MEDNIOVA - Medical Clinic",
-      "description": "Designed and developed a modern, responsive landing page for a medical clinic using vanilla HTML, CSS, and JavaScript. Features smooth scrolling, a clean menu layout with service images and pricing, and optimized responsiveness across all devices. Perfect for showcasing services and engaging patients online.",
+      "description": "Modern responsive landing page for a medical clinic with smooth scrolling, clean service layout with pricing, and cross-device responsiveness.",
       "demoUrl": "https://mahmoudshalabyy.github.io/site1/3.html",
       "githubUrl": "https://github.com/MahmoudShalabyy/site1.git",
       "image": "./images/project/d.PNG",
@@ -248,7 +248,7 @@
     },
     {
       "title": "Coffee Corner Landing Page",
-      "description": "Designed and developed a modern, responsive landing page for a coffee shop using vanilla HTML, CSS, and JavaScript. Features smooth scrolling, a clean menu layout with product images and pricing, and optimized responsiveness across all devices. Perfect for showcasing services and engaging customers online.",
+      "description": "Modern responsive landing page for a coffee shop with smooth scrolling, clean menu layout with product images and pricing, and full device responsiveness.",
       "demoUrl": "https://badawy24.github.io/Coffee_Corner/",
       "githubUrl": "https://github.com/Badawy24/Coffee_Corner",
       "image": "./images/project/coffeecorner.png",
