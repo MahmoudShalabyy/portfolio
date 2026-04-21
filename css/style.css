@@ -818,6 +818,21 @@ section {
         gap: 3rem;
     }
 
+    .portfolio-box .portfolio-carousel {
+        height: auto;
+        aspect-ratio: 16 / 10;
+        background: var(--second-bg-color);
+    }
+
+    .portfolio-carousel .img-item img {
+        object-fit: contain;
+        background: var(--second-bg-color);
+    }
+
+    .portfolio-box .navigation {
+        text-align: center;
+        margin-top: 1.5rem;
+    }
 }
 
 @media screen and (max-width: 600px) {
