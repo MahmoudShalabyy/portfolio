@@ -110,19 +110,136 @@ body:not([class]) header {
 }
 
 .logo {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 1rem;
     font-weight: 700 !important;
-    font-size: 2.4rem !important;
+    font-size: 2rem !important;
+    color: var(--white-color) !important;
+    -webkit-text-fill-color: initial;
+    background: transparent !important;
+    position: relative;
+    text-decoration: none;
+}
+
+.logo-mark {
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 4px 14px -4px rgba(139, 92, 246, 0.5);
+    transition: transform 0.3s var(--ease-out);
+}
+
+.logo:hover .logo-mark {
+    transform: rotate(-8deg) scale(1.05);
+}
+
+.logo-text {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+body.light-mode .logo {
+    color: #111 !important;
+}
+
+/* ============================================
+   LOADING SCREEN — Shows on first paint, fades out
+   ============================================ */
+.loading-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    background: #0a0a0f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.4rem;
+    transition: opacity 0.5s var(--ease-out), visibility 0.5s var(--ease-out);
+}
+
+body.light-mode .loading-screen {
+    background: #fafafa;
+}
+
+body.ready .loading-screen {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loading-logo {
+    width: 8rem;
+    height: 8rem;
+    animation: loadingPulse 1.6s var(--ease-in-out) infinite;
+}
+
+.loading-logo svg {
+    width: 100%;
+    height: 100%;
+    border-radius: 1.8rem;
+    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4),
+                0 20px 40px -10px rgba(139, 92, 246, 0.5);
+    animation: loadingGlow 1.6s var(--ease-in-out) infinite;
+}
+
+@keyframes loadingPulse {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.08); }
+}
+
+@keyframes loadingGlow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4), 0 20px 40px -10px rgba(139, 92, 246, 0.5); }
+    50%      { box-shadow: 0 0 0 18px rgba(139, 92, 246, 0), 0 20px 40px -10px rgba(139, 92, 246, 0.7); }
+}
+
+.loading-name {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #ececf1;
+    opacity: 0.9;
+}
+
+body.light-mode .loading-name {
+    color: #111;
+}
+
+.loading-name span {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.loading-bar {
+    width: 16rem;
+    height: 3px;
+    background: rgba(139, 92, 246, 0.15);
+    border-radius: 100px;
+    overflow: hidden;
     position: relative;
 }
 
-.logo::before {
-    content: '◆ ';
-    -webkit-text-fill-color: #8b5cf6;
-    color: #8b5cf6;
+.loading-bar-fill {
+    position: absolute;
+    inset: 0;
+    width: 30%;
+    background: var(--gradient-primary);
+    border-radius: inherit;
+    animation: loadingBar 1.4s ease-in-out infinite;
+}
+
+@keyframes loadingBar {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(400%); }
 }
 
 nav a {

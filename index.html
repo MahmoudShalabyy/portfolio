@@ -29,9 +29,9 @@
     <meta name="twitter:description" content="Full Stack Developer specializing in Laravel, multi-tenant SaaS systems, ERP modules, and e-learning platforms.">
     <meta name="twitter:image" content="https://mfneajdyjldywiumpimm.supabase.co/storage/v1/object/public/portfolio-images/profile/1776787550979-27kxs1.jpg">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%238b5cf6'/%3E%3Cstop offset='100%25' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='68' font-family='Arial,sans-serif' font-size='58' font-weight='800' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
-    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%238b5cf6'/%3E%3Cstop offset='100%25' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='68' font-family='Arial,sans-serif' font-size='58' font-weight='800' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+    <!-- Favicon: MS monogram with gradient -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%238b5cf6'/%3E%3Cstop offset='100%25' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='70' font-family='Space Grotesk,Arial,sans-serif' font-size='52' font-weight='800' fill='white' text-anchor='middle' letter-spacing='-3'%3EMS%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%238b5cf6'/%3E%3Cstop offset='100%25' stop-color='%2306b6d4'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ctext x='50' y='70' font-family='Space Grotesk,Arial,sans-serif' font-size='52' font-weight='800' fill='white' text-anchor='middle' letter-spacing='-3'%3EMS%3C/text%3E%3C/svg%3E">
 
     <link href='https://cdn.jsdelivr.net/npm/boxicons/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="css/style.css">
@@ -46,11 +46,11 @@
             var bg = isLight ? '#fafafa' : '#0a0a0f';
             document.documentElement.style.background = bg;
             document.documentElement.classList.add(isLight ? 'pre-light' : 'pre-dark');
-            // Hide body until app.js finishes rendering — prevents flash of
-            // stale hardcoded HTML before Supabase data arrives.
+            // Hide everything except the loading screen until app.js finishes
+            // rendering — prevents flash of stale hardcoded HTML.
             var style = document.createElement('style');
             style.id = '__boot-hide';
-            style.textContent = 'body{visibility:hidden}body.ready{visibility:visible}';
+            style.textContent = 'body > *:not(.loading-screen){visibility:hidden}body.ready > *{visibility:visible}';
             document.head.appendChild(style);
         })();
     </script>
@@ -58,8 +58,38 @@
 
 <body>
 
+    <!-- Loading screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-logo">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#8b5cf6"/>
+                        <stop offset="100%" stop-color="#06b6d4"/>
+                    </linearGradient>
+                </defs>
+                <rect width="100" height="100" rx="22" fill="url(#logo-grad)"/>
+                <text x="50" y="70" font-family="Space Grotesk, Arial, sans-serif" font-size="52" font-weight="800" fill="white" text-anchor="middle" letter-spacing="-3">MS</text>
+            </svg>
+        </div>
+        <div class="loading-name">Mahmoud <span>Shalaby</span></div>
+        <div class="loading-bar"><div class="loading-bar-fill"></div></div>
+    </div>
+
     <header>
-        <a href="#home" class="logo">Portfolio</a>
+        <a href="#home" class="logo" aria-label="Mahmoud Shalaby">
+            <svg class="logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                    <linearGradient id="nav-logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#8b5cf6"/>
+                        <stop offset="100%" stop-color="#06b6d4"/>
+                    </linearGradient>
+                </defs>
+                <rect width="100" height="100" rx="22" fill="url(#nav-logo-grad)"/>
+                <text x="50" y="70" font-family="Space Grotesk, Arial, sans-serif" font-size="52" font-weight="800" fill="white" text-anchor="middle" letter-spacing="-3">MS</text>
+            </svg>
+            <span class="logo-text">Shalaby</span>
+        </a>
 
         <i class="bx bx-menu" id="menu-icon"></i>
         <nav>
