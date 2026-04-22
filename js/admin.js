@@ -765,4 +765,12 @@
             showLogin();
         }
     });
+
+    // Listen for token refresh / sign-out events (SDK auto-refreshes tokens)
+    window.SupabaseAPI.onAuthChange((event, session) => {
+        if (event === 'SIGNED_OUT' && !loginScreen.hidden === false) {
+            // User was signed out elsewhere — go back to login
+            location.reload();
+        }
+    });
 })();

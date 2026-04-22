@@ -242,6 +242,24 @@
         }).join('');
     };
 
+    const renderFooter = (contact) => {
+        const contactList = document.getElementById('footer-contact');
+        const socialsBox = document.getElementById('footer-socials');
+        if (contactList) {
+            contactList.innerHTML = `
+                <li><a href="mailto:${escapeHtml(contact.email)}">${escapeHtml(contact.email)}</a></li>
+                <li><a href="tel:${escapeHtml(contact.phone).replace(/\s+/g, '')}">${escapeHtml(contact.phone)}</a></li>
+            `;
+        }
+        if (socialsBox) {
+            socialsBox.innerHTML = (contact.socials || []).map(s => `
+                <a href="${escapeHtml(s.url)}" target="_blank" rel="noopener" title="${escapeHtml(s.name)}" aria-label="${escapeHtml(s.name)}">
+                    <i class="bx ${escapeHtml(s.icon)}"></i>
+                </a>
+            `).join('');
+        }
+    };
+
     const renderContact = (contact) => {
         const contactBox = document.querySelector('.contact .contact-box');
         contactBox.querySelector('h2').textContent = contact.heading;
@@ -489,6 +507,7 @@
         renderMarquee(data.resume?.skills?.items);
         renderProjects(data.projects);
         renderContact(data.contact);
+        renderFooter(data.contact);
         initNav();
         initResumeTabs();
         initCarousel(data.projects.length);

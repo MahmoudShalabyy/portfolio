@@ -1918,20 +1918,178 @@ html[data-mode="light"] .contact-box .field-box textarea {
 }
 
 /* ============================================
-   FOOTER
+   FOOTER — Multi-column with brand + links
    ============================================ */
 .footer {
     background: var(--bg-color) !important;
-    border-top: 1px solid rgba(139, 92, 246, 0.1);
-    padding: 4rem 9% !important;
-    font-family: var(--font-mono) !important;
-    font-size: 1.2rem !important;
-    color: rgba(236, 236, 241, 0.5) !important;
-    letter-spacing: 0.05em;
+    border-top: 1px solid rgba(139, 92, 246, 0.12);
+    padding: 6rem 9% 2rem !important;
+    position: relative;
+    overflow: hidden;
 }
 
-html[data-mode="light"] .footer {
-    color: rgba(34, 34, 34, 0.6) !important;
+.footer::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 20%;
+    width: 40rem;
+    height: 40rem;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.08), transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.2fr 1fr;
+    gap: 4rem;
+    position: relative;
+    z-index: 1;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.footer-brand .logo {
+    margin-bottom: 1.4rem;
+    display: inline-flex !important;
+}
+
+.footer-tagline {
+    font-size: 1.4rem !important;
+    line-height: 1.6;
+    color: rgba(236, 236, 241, 0.55);
+    max-width: 30rem;
+}
+
+body.light-mode .footer-tagline {
+    color: rgba(17, 17, 17, 0.65);
+}
+
+.footer-title {
+    font-family: var(--font-display) !important;
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.15em !important;
+    color: rgba(236, 236, 241, 0.6);
+    margin-bottom: 1.6rem;
+}
+
+body.light-mode .footer-title {
+    color: rgba(17, 17, 17, 0.7);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.footer-links a {
+    font-size: 1.4rem;
+    color: rgba(236, 236, 241, 0.75);
+    text-decoration: none;
+    transition: all 0.2s var(--ease-out);
+    display: inline-block;
+}
+
+body.light-mode .footer-links a {
+    color: rgba(17, 17, 17, 0.75);
+}
+
+.footer-links a:hover {
+    color: #8b5cf6;
+    transform: translateX(4px);
+}
+
+.footer-socials {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+
+.footer-socials a {
+    width: 4rem;
+    height: 4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(139, 92, 246, 0.08);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 10px;
+    color: #8b5cf6;
+    font-size: 1.8rem;
+    transition: all 0.25s var(--ease-out);
+    text-decoration: none;
+}
+
+body.light-mode .footer-socials a {
+    background: #fff;
+    border-color: rgba(139, 92, 246, 0.25);
+}
+
+.footer-socials a:hover {
+    background: var(--gradient-primary);
+    color: #fff;
+    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px -6px rgba(139, 92, 246, 0.5);
+}
+
+.footer-bottom {
+    max-width: 120rem;
+    margin: 4rem auto 0;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(139, 92, 246, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-bottom p {
+    font-family: var(--font-mono) !important;
+    font-size: 1.2rem !important;
+    color: rgba(236, 236, 241, 0.5);
+    letter-spacing: 0.02em;
+    margin: 0;
+}
+
+body.light-mode .footer-bottom p {
+    color: rgba(17, 17, 17, 0.55);
+}
+
+.footer-credit span {
+    color: #ec4899;
+    margin: 0 0.3rem;
+    animation: heartBeat 1.6s ease-in-out infinite;
+    display: inline-block;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.2); }
+}
+
+@media screen and (max-width: 900px) {
+    .footer { padding: 5rem 4% 2rem !important; }
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem 2rem;
+    }
+    .footer-brand { grid-column: 1 / -1; }
+}
+
+@media screen and (max-width: 500px) {
+    .footer-container { grid-template-columns: 1fr; }
+    .footer-bottom { justify-content: center; text-align: center; }
 }
 
 /* ============================================

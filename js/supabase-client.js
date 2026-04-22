@@ -2,7 +2,14 @@
     const { SUPABASE_URL, SUPABASE_KEY, STORAGE_BUCKET } = window.PORTFOLIO_CONFIG;
     // Single auth client for login/save. Public reads go through raw fetch
     // so expired JWTs don't break the public portfolio page.
-    const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {
+        auth: {
+            persistSession: true,
+            autoRefreshToken: true,
+            detectSessionInUrl: true,
+            storage: window.localStorage,
+        },
+    });
 
     const api = {
         client,
@@ -54,6 +61,10 @@
         async getSession() {
             const { data } = await client.auth.getSession();
             return data.session;
+        },
+
+        onAuthChange(callback) {
+            return client.auth.onAuthStateChange((event, session) => callback(event, session));
         },
 
         async uploadImage(file, folder = 'uploads') {
