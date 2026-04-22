@@ -37,6 +37,20 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/light.css" id="mode">
     <link rel="stylesheet" href="css/theme-premium.css">
+
+    <!-- Apply saved mode immediately to prevent flash of wrong theme -->
+    <script>
+        (function() {
+            var saved = localStorage.getItem('mode');
+            var isLight = saved === 'light';
+            document.documentElement.style.background = isLight ? '#fafafa' : '#0a0a0f';
+            if (isLight) {
+                document.documentElement.classList.add('pre-light');
+            } else {
+                document.documentElement.classList.add('pre-dark');
+            }
+        })();
+    </script>
 </head>
 
 <body>

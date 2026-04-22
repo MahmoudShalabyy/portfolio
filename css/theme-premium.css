@@ -2029,6 +2029,19 @@ body.light-mode ::-webkit-scrollbar-track {
         background: rgba(10, 10, 15, 0.95) !important;
         backdrop-filter: blur(20px);
     }
+
+    body.light-mode header nav {
+        background: rgba(255, 255, 255, 0.97) !important;
+    }
+
+    body.light-mode header nav a {
+        color: #111 !important;
+    }
+
+    body.light-mode header nav a.active,
+    body.light-mode header nav a:hover {
+        color: #8b5cf6 !important;
+    }
     nav a { margin: 2rem 0 !important; padding: 1rem 2rem !important; }
     .hero-stats {
         gap: 2rem;

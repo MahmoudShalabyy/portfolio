@@ -28,6 +28,10 @@ body {
     position: relative;
 }
 
+/* Prevent white flash before data loads — show theme bg immediately */
+html.pre-dark, html.pre-dark body { background: #0a0a0f !important; }
+html.pre-light, html.pre-light body { background: #fafafa !important; }
+
 body.loaded {
     opacity: 1;
 }
