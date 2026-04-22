@@ -23,18 +23,39 @@
 
 /* Override dark mode palette for more premium feel */
 html {
-    overflow-x: hidden;
+    overflow-x: clip;
 }
 
 body {
-    overflow-x: hidden;
+    overflow-x: clip;
     max-width: 100vw;
     width: 100%;
     position: relative;
 }
 
-/* Hide any horizontal scrollbar globally */
-body::-webkit-scrollbar:horizontal { display: none; }
+/* Safety net: clamp any content on mobile */
+@media (max-width: 900px) {
+    .home-details,
+    .home-img,
+    section > .heading,
+    .resume-container,
+    .portfolio-containber,
+    .contact-container,
+    .featured-project,
+    .projects-grid,
+    .other-projects-header,
+    .hero-stats {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    .home-details > p,
+    .featured-desc,
+    .resume-item p,
+    .project-card-body p {
+        word-break: break-word;
+        overflow-wrap: anywhere;
+    }
+}
 
 body {
     font-family: var(--font-body) !important;
@@ -307,6 +328,7 @@ body.light-mode .hero-stats {
     overflow: hidden !important;
     vertical-align: top;
     white-space: nowrap;
+    max-width: 100%;
 }
 
 /* Outlined "ghost" text - shown behind the typed fill */
