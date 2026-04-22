@@ -112,40 +112,60 @@ body:not([class]) header {
 .logo {
     display: inline-flex !important;
     align-items: center;
-    gap: 1rem;
     font-weight: 700 !important;
-    font-size: 2rem !important;
-    color: var(--white-color) !important;
-    -webkit-text-fill-color: initial;
     background: transparent !important;
+    -webkit-text-fill-color: initial;
     position: relative;
     text-decoration: none;
-}
-
-.logo-mark {
-    width: 3.6rem;
-    height: 3.6rem;
-    border-radius: 0.8rem;
-    box-shadow: 0 4px 14px -4px rgba(139, 92, 246, 0.5);
     transition: transform 0.3s var(--ease-out);
 }
 
-.logo:hover .logo-mark {
-    transform: rotate(-8deg) scale(1.05);
+.logo:hover {
+    transform: scale(1.04);
 }
 
-.logo-text {
+.logo-inline {
+    display: inline-flex;
+    align-items: baseline;
     font-family: var(--font-display);
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    padding: 0.4rem 0.2rem;
+}
+
+.logo .logo-bracket {
+    font-family: var(--font-mono) !important;
+    font-weight: 500;
+    color: #8b5cf6;
+    opacity: 0.7;
+    font-size: 0.9em;
+    transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+
+.logo:hover .logo-bracket {
+    opacity: 1;
+}
+
+.logo:hover .logo-bracket:first-child {
+    transform: translateX(-2px);
+}
+
+.logo:hover .logo-bracket:last-child {
+    transform: translateX(2px);
+}
+
+.logo .logo-initials {
+    margin: 0 0.3rem;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
-body.light-mode .logo {
-    color: #111 !important;
+body.light-mode .logo .logo-bracket {
+    color: #8b5cf6;
 }
 
 /* ============================================
@@ -175,28 +195,51 @@ body.ready .loading-screen {
 }
 
 .loading-logo {
-    width: 8rem;
-    height: 8rem;
-    animation: loadingPulse 1.6s var(--ease-in-out) infinite;
+    display: inline-flex;
+    align-items: baseline;
+    font-family: var(--font-display);
+    font-size: 8rem;
+    font-weight: 800;
+    letter-spacing: -0.05em;
+    line-height: 1;
+    filter: drop-shadow(0 10px 40px rgba(139, 92, 246, 0.4));
 }
 
-.loading-logo svg {
-    width: 100%;
-    height: 100%;
-    border-radius: 1.8rem;
-    box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4),
-                0 20px 40px -10px rgba(139, 92, 246, 0.5);
-    animation: loadingGlow 1.6s var(--ease-in-out) infinite;
+.loading-logo .logo-bracket {
+    font-family: var(--font-mono) !important;
+    font-weight: 500;
+    color: #8b5cf6;
+    font-size: 0.8em;
+    opacity: 0.85;
+    animation: bracketBounceLeft 2s var(--ease-in-out) infinite;
 }
 
-@keyframes loadingPulse {
-    0%, 100% { transform: scale(1); }
-    50%      { transform: scale(1.08); }
+.loading-logo .logo-bracket:last-child {
+    animation-name: bracketBounceRight;
 }
 
-@keyframes loadingGlow {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4), 0 20px 40px -10px rgba(139, 92, 246, 0.5); }
-    50%      { box-shadow: 0 0 0 18px rgba(139, 92, 246, 0), 0 20px 40px -10px rgba(139, 92, 246, 0.7); }
+.loading-logo .logo-initials {
+    margin: 0 0.6rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: initialsPulse 2s var(--ease-in-out) infinite;
+}
+
+@keyframes initialsPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50%      { transform: scale(1.06); opacity: 0.9; }
+}
+
+@keyframes bracketBounceLeft {
+    0%, 100% { transform: translateX(0); }
+    50%      { transform: translateX(-6px); }
+}
+
+@keyframes bracketBounceRight {
+    0%, 100% { transform: translateX(0); }
+    50%      { transform: translateX(6px); }
 }
 
 .loading-name {
