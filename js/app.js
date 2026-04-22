@@ -22,6 +22,21 @@
         .replace(/'/g, '&#039;');
 
     const renderHome = (home) => {
+        const details = document.querySelector('.home-details');
+
+        // Availability badge (top of home)
+        let badge = details.querySelector('.status-badge');
+        if (home.available) {
+            if (!badge) {
+                badge = document.createElement('div');
+                badge.className = 'status-badge';
+                badge.innerHTML = `<span class="status-dot"></span><span>Available for work</span>`;
+                details.insertBefore(badge, details.firstChild);
+            }
+        } else if (badge) {
+            badge.remove();
+        }
+
         document.querySelector('.home-details h1').textContent = home.name;
 
         const h2 = document.querySelector('.home-details h2');
@@ -33,6 +48,25 @@
         h2.innerHTML = `I'm a ${rolesHtml}`;
 
         document.querySelector('.home-details > p').textContent = home.description;
+
+        // Stats row
+        let statsEl = details.querySelector('.hero-stats');
+        if (Array.isArray(home.stats) && home.stats.length) {
+            if (!statsEl) {
+                statsEl = document.createElement('div');
+                statsEl.className = 'hero-stats';
+                const socialSection = details.querySelector('.social-section');
+                details.insertBefore(statsEl, socialSection);
+            }
+            statsEl.innerHTML = home.stats.map(s => `
+                <div class="stat-item">
+                    <div class="stat-value">${escapeHtml(s.value)}</div>
+                    <div class="stat-label">${escapeHtml(s.label)}</div>
+                </div>
+            `).join('');
+        } else if (statsEl) {
+            statsEl.remove();
+        }
 
         const cvBtn = document.querySelector('.home-details .social-section .btn');
         cvBtn.href = home.cvLink;
@@ -56,6 +90,7 @@
 
         const renderItems = (items) => items.map(it => `
             <div class="resume-item">
+                <span class="resume-item-arrow"></span>
                 <p class="year">${escapeHtml(it.year)}</p>
                 <h3>${escapeHtml(it.title)}</h3>
                 <div class="company">${escapeHtml(it.company)}</div>
@@ -65,11 +100,15 @@
 
         const expEl = document.querySelector('.resume-details.experience');
         expEl.querySelector('.desc').textContent = resume.experience.description;
-        expEl.querySelector('.resume-list').innerHTML = renderItems(resume.experience.items);
+        const expList = expEl.querySelector('.resume-list');
+        expList.classList.add('timeline');
+        expList.innerHTML = renderItems(resume.experience.items);
 
         const eduEl = document.querySelector('.resume-details.education');
         eduEl.querySelector('.desc').textContent = resume.education.description;
-        eduEl.querySelector('.resume-list').innerHTML = renderItems(resume.education.items);
+        const eduList = eduEl.querySelector('.resume-list');
+        eduList.classList.add('timeline');
+        eduList.innerHTML = renderItems(resume.education.items);
 
         const skillsEl = document.querySelector('.resume-details.skills');
         skillsEl.querySelector('.desc').innerHTML = resume.skills.description;
@@ -90,40 +129,119 @@
     };
 
     const renderProjects = (projects) => {
+        // Legacy carousel (hidden now) — kept alive for initCarousel
         const box = document.querySelector('#portfolio-box');
         const imgSlide = document.querySelector('#img-slide');
+        if (box) {
+            box.innerHTML = projects.map((p, i) => {
+                const num = String(i + 1).padStart(2, '0');
+                return `<div class="portfolio-details ${i === 0 ? 'active' : ''}"><p class="numb">${num}</p><h3>${escapeHtml(p.title)}</h3></div>`;
+            }).join('');
+        }
+        if (imgSlide) {
+            imgSlide.innerHTML = projects.map(p => `
+                <div class="img-item"><img src="${escapeHtml(p.image || '')}" alt="${escapeHtml(p.title)}"></div>
+            `).join('');
+        }
 
-        box.innerHTML = projects.map((p, i) => {
-            const num = String(i + 1).padStart(2, '0');
-            const techHtml = p.tech.map(t => `
-                <span class="tech-icon" data-tooltip="${escapeHtml(t.name)}">
+        renderFeaturedProject(projects);
+        renderProjectsGrid(projects);
+    };
+
+    const techBadge = (t) => `
+        <span class="tech-pill" data-tooltip="${escapeHtml(t.name)}">
+            <i class='bx ${escapeHtml(t.icon)}' style='color:${escapeHtml(t.color)}'></i>
+            <span>${escapeHtml(t.name)}</span>
+        </span>
+    `;
+
+    const renderFeaturedProject = (projects) => {
+        const el = document.getElementById('featured-project');
+        if (!el || !projects?.length) return;
+        // Pick the project marked as featured, otherwise fall back to the first one
+        const featuredIndex = projects.findIndex(p => p && p.featured);
+        const p = featuredIndex >= 0 ? projects[featuredIndex] : projects[0];
+        const displayNum = String((featuredIndex >= 0 ? featuredIndex : 0) + 1).padStart(2, '0');
+        const demoLink = p.demoUrl ? `
+            <a href="${escapeHtml(p.demoUrl)}" target="_blank" rel="noopener" class="featured-cta">
+                <i class='bx bx-link-external'></i> View Live
+            </a>` : '';
+        const githubLink = p.githubUrl ? `
+            <a href="${escapeHtml(p.githubUrl)}" target="_blank" rel="noopener" class="featured-cta ghost">
+                <i class='bx bxl-github'></i> Source Code
+            </a>` : '';
+        const imgOrPlaceholder = p.image
+            ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}">`
+            : `<div class="img-placeholder"><i class='bx bx-image'></i><span>Add screenshot from admin</span></div>`;
+
+        el.innerHTML = `
+            <div class="featured-visual">
+                <div class="featured-badge"><span class="pulse-dot"></span> FEATURED</div>
+                ${imgOrPlaceholder}
+            </div>
+            <div class="featured-content">
+                <p class="featured-index">${displayNum} / ${String(projects.length).padStart(2, '0')}</p>
+                <h3 class="featured-title">${escapeHtml(p.title)}</h3>
+                <p class="featured-desc">${escapeHtml(p.description)}</p>
+                <div class="featured-tech">${(p.tech || []).map(techBadge).join('')}</div>
+                <div class="featured-actions">${demoLink}${githubLink}</div>
+            </div>
+        `;
+    };
+
+    const renderProjectsGrid = (projects) => {
+        const grid = document.getElementById('projects-grid');
+        if (!grid) return;
+        // Exclude whichever project is shown as featured
+        const featuredIndex = projects.findIndex(p => p && p.featured);
+        const skipIndex = featuredIndex >= 0 ? featuredIndex : 0;
+        const rest = projects.filter((_, i) => i !== skipIndex);
+        if (!rest.length) {
+            grid.innerHTML = '';
+            grid.previousElementSibling?.style.setProperty('display', 'none');
+            return;
+        }
+
+        grid.innerHTML = rest.map((p, i) => {
+            // Preserve original project index for display number
+            const origIndex = projects.indexOf(p);
+            const num = String(origIndex + 1).padStart(2, '0');
+            const demoLink = p.demoUrl ? `
+                <a href="${escapeHtml(p.demoUrl)}" target="_blank" rel="noopener" title="Live Demo" aria-label="Live Demo">
+                    <i class='bx bx-link-external'></i>
+                </a>` : '';
+            const githubLink = p.githubUrl ? `
+                <a href="${escapeHtml(p.githubUrl)}" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+                    <i class='bx bxl-github'></i>
+                </a>` : '';
+            const img = p.image
+                ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}" loading="lazy">`
+                : `<div class="img-placeholder small"><i class='bx bx-image'></i></div>`;
+            const techPreview = (p.tech || []).slice(0, 4).map(t => `
+                <span class="mini-tech" title="${escapeHtml(t.name)}">
                     <i class='bx ${escapeHtml(t.icon)}' style='color:${escapeHtml(t.color)}'></i>
                 </span>
             `).join('');
-            const demoLink = p.demoUrl ? `
-                <a href="${escapeHtml(p.demoUrl)}" target="_blank" rel="noopener" data-tooltip="Live Demo">
-                    <i class='bx bx-arrow-back'></i>
-                </a>` : '';
-            const githubLink = p.githubUrl ? `
-                <a href="${escapeHtml(p.githubUrl)}" target="_blank" rel="noopener" data-tooltip="GitHub">
-                    <i class='bx bxl-github'></i>
-                </a>` : '';
+            const extra = (p.tech || []).length > 4
+                ? `<span class="mini-tech more">+${(p.tech || []).length - 4}</span>` : '';
+
             return `
-                <div class="portfolio-details ${i === 0 ? 'active' : ''}">
-                    <p class="numb">${num}</p>
-                    <h3>${escapeHtml(p.title)}</h3>
-                    <p>${escapeHtml(p.description)}</p>
-                    <div class="tech"><p>${techHtml}</p></div>
-                    <div class="live-github">${demoLink}${githubLink}</div>
-                </div>
+                <article class="project-card">
+                    <div class="project-card-visual">
+                        ${img}
+                        <div class="project-card-overlay">
+                            <div class="project-card-links">${demoLink}${githubLink}</div>
+                        </div>
+                    </div>
+                    <div class="project-card-body">
+                        <span class="project-card-num">${num}</span>
+                        <h4>${escapeHtml(p.title)}</h4>
+                        <p>${escapeHtml(p.description)}</p>
+                        <div class="project-card-tech">${techPreview}${extra}</div>
+                    </div>
+                </article>
             `;
         }).join('');
-
-        imgSlide.innerHTML = projects.map((p, i) => `
-            <div class="img-item">
-                <img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}">
-            </div>
-        `).join('');
     };
 
     const renderContact = (contact) => {
@@ -218,25 +336,29 @@
         const icon = btn.querySelector('i');
         const mode = document.getElementById('mode');
 
-        const saved = localStorage.getItem('mode');
-        if (saved === 'dark') {
-            mode.href = './css/dark.css';
-            icon.classList.add('bxs-sun');
-        } else {
-            mode.href = './css/light.css';
-            icon.classList.add('bxs-moon');
-        }
-
-        btn.addEventListener('click', () => {
-            if (mode.href.includes('light.css')) {
+        const applyMode = (which) => {
+            if (which === 'dark') {
                 mode.href = './css/dark.css';
-                icon.classList.replace('bxs-moon', 'bxs-sun');
-                localStorage.setItem('mode', 'dark');
+                document.body.classList.add('dark-mode');
+                document.body.classList.remove('light-mode');
+                icon.classList.remove('bxs-moon');
+                icon.classList.add('bxs-sun');
             } else {
                 mode.href = './css/light.css';
-                icon.classList.replace('bxs-sun', 'bxs-moon');
-                localStorage.setItem('mode', 'light');
+                document.body.classList.add('light-mode');
+                document.body.classList.remove('dark-mode');
+                icon.classList.remove('bxs-sun');
+                icon.classList.add('bxs-moon');
             }
+        };
+
+        const saved = localStorage.getItem('mode');
+        applyMode(saved === 'light' ? 'light' : 'dark');
+
+        btn.addEventListener('click', () => {
+            const next = mode.href.includes('light.css') ? 'dark' : 'light';
+            applyMode(next);
+            localStorage.setItem('mode', next);
         });
     };
 
@@ -245,10 +367,128 @@
         if (el) el.textContent = new Date().getFullYear();
     };
 
+    const initContactForm = () => {
+        const form = document.getElementById('contact-form');
+        if (!form) return;
+        const cfg = window.PORTFOLIO_CONFIG || {};
+        const successEl = document.getElementById('success-message');
+        const errorEl = document.getElementById('error-message');
+        const submitBtn = form.querySelector('input[type="submit"]');
+        const originalBtnValue = submitBtn?.value || 'Send Message';
+
+        if (!window.emailjs || !cfg.EMAILJS_PUBLIC_KEY) {
+            console.warn('EmailJS not configured');
+            return;
+        }
+        try {
+            window.emailjs.init({ publicKey: cfg.EMAILJS_PUBLIC_KEY });
+        } catch (e) { console.warn('EmailJS init failed:', e); }
+
+        const hideMessages = () => {
+            if (successEl) successEl.style.display = 'none';
+            if (errorEl) errorEl.style.display = 'none';
+        };
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            hideMessages();
+
+            const fd = new FormData(form);
+            const params = {
+                from_name: (fd.get('name') || '').toString().trim(),
+                reply_to: (fd.get('email') || '').toString().trim(),
+                email: (fd.get('email') || '').toString().trim(),
+                subject: (fd.get('title') || '').toString().trim(),
+                message: (fd.get('message') || '').toString().trim(),
+            };
+
+            if (!params.from_name || !params.reply_to || !params.message) {
+                if (errorEl) {
+                    errorEl.textContent = 'Please fill in all required fields.';
+                    errorEl.style.display = 'block';
+                }
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.value = 'Sending...';
+
+            try {
+                await window.emailjs.send(
+                    cfg.EMAILJS_SERVICE_ID,
+                    cfg.EMAILJS_TEMPLATE_ID,
+                    params
+                );
+                if (successEl) {
+                    successEl.textContent = 'Your message has been sent successfully!';
+                    successEl.style.display = 'block';
+                }
+                form.reset();
+            } catch (err) {
+                console.error('EmailJS send failed:', err);
+                if (errorEl) {
+                    errorEl.textContent = 'Could not send message. Please try again later.';
+                    errorEl.style.display = 'block';
+                }
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.value = originalBtnValue;
+            }
+        });
+    };
+
+    const initHeaderScroll = () => {
+        const onScroll = () => {
+            document.body.classList.toggle('scrolled', window.scrollY > 20);
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+    };
+
+    const renderMarquee = (skills) => {
+        const track = document.getElementById('marquee-track');
+        if (!track || !Array.isArray(skills) || !skills.length) return;
+
+        // Pick a curated subset for the marquee (skip duplicates-looking items)
+        const preferred = ['Laravel', 'PHP', 'MySQL', 'Node.js', 'TypeScript', 'Angular', 'React',
+            'JavaScript', 'MongoDB', 'Firebase', 'Git', 'REST API', 'Tailwind', 'Bootstrap', 'AI'];
+        const chosen = skills.filter(s => preferred.includes(s.name));
+        const list = chosen.length >= 6 ? chosen : skills.slice(0, 14);
+
+        const itemHtml = (s) => `
+            <span class="marquee-item">
+                <i class='bx ${escapeHtml(s.icon)}' style='color:${escapeHtml(s.color)}'></i>
+                <span>${escapeHtml(s.name)}</span>
+            </span>
+            <span class="marquee-separator">◆</span>
+        `;
+        // Duplicate content so the scroll wraps seamlessly
+        track.innerHTML = list.map(itemHtml).join('') + list.map(itemHtml).join('');
+    };
+
+    const initScrollReveal = () => {
+        const targets = document.querySelectorAll('section > .heading, .resume-container, .portfolio-containber, .contact-container, footer p');
+        targets.forEach((el, i) => {
+            el.classList.add('reveal');
+            if (i % 3 === 1) el.classList.add('reveal-delay-1');
+            if (i % 3 === 2) el.classList.add('reveal-delay-2');
+        });
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+        targets.forEach(el => io.observe(el));
+    };
+
     try {
         const data = await loadData();
         renderHome(data.home);
         renderResume(data.resume);
+        renderMarquee(data.resume?.skills?.items);
         renderProjects(data.projects);
         renderContact(data.contact);
         initNav();
@@ -256,6 +496,9 @@
         initCarousel(data.projects.length);
         initDarkMode();
         setFooterYear();
+        initHeaderScroll();
+        initScrollReveal();
+        initContactForm();
     } catch (err) {
         console.error('Failed to load portfolio data:', err);
     } finally {

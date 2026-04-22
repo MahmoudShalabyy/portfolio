@@ -3,6 +3,7 @@
 
     let data = null;
     let dirty = false;
+    let suppressChanges = false;
 
     const loginScreen = document.getElementById('login-screen');
     const dashboard = document.getElementById('dashboard');
@@ -96,11 +97,15 @@
         try {
             const { data: loaded, isDraft, needsSeed } = await loadData();
             data = loaded;
+            suppressChanges = true;
             renderAll();
             attachTabs();
             attachSubTabs();
             attachGlobalButtons();
             attachPanelChangeListeners();
+            // Release change suppression on next frame so initial render
+            // doesn't flag everything as unsaved
+            requestAnimationFrame(() => { suppressChanges = false; });
             if (needsSeed) {
                 setStatus('Initial data loaded — click Publish Changes to sync with Supabase', 'unsaved');
                 dirty = true;
@@ -178,6 +183,7 @@
             if (!action) return;
             const actions = {
                 'add-role': addRole,
+                'add-stat': addStat,
                 'add-home-social': () => addSocial('home'),
                 'add-contact-social': () => addSocial('contact'),
                 'add-experience': () => addResumeItem('experience'),
@@ -218,6 +224,7 @@
 
     const attachPanelChangeListeners = () => {
         document.querySelector('.main-content').addEventListener('input', (e) => {
+            if (suppressChanges) return;
             const target = e.target;
             if (!target.matches('input, textarea')) return;
             handleFieldChange(target);
@@ -361,8 +368,55 @@
             attachImageUpload(profileInput, 'profile');
             profileInput.dataset.uploadAttached = '1';
         }
+
+        const availCheckbox = document.getElementById('home-available');
+        if (availCheckbox) {
+            availCheckbox.checked = !!data.home?.available;
+            if (!availCheckbox.dataset.listenerAttached) {
+                availCheckbox.addEventListener('change', () => {
+                    if (!data.home) data.home = {};
+                    data.home.available = availCheckbox.checked;
+                    saveDraft();
+                });
+                availCheckbox.dataset.listenerAttached = '1';
+            }
+        }
+
+        renderStats();
         renderRoles();
         renderSocials('home');
+    };
+
+    const renderStats = () => {
+        const box = document.getElementById('home-stats');
+        if (!box) return;
+        if (!data.home) data.home = {};
+        if (!Array.isArray(data.home.stats)) data.home.stats = [];
+        const list = data.home.stats;
+        box.innerHTML = list.map((s, i) => `
+            <div class="list-item">
+                <div class="item-header">
+                    <span class="item-title">Stat #${i + 1}</span>
+                    <div class="item-actions">
+                        <button class="icon-btn" data-move="home.stats" data-index="${i}" data-dir="up" ${i === 0 ? 'disabled' : ''}><i class='bx bx-up-arrow-alt'></i></button>
+                        <button class="icon-btn" data-move="home.stats" data-index="${i}" data-dir="down" ${i === list.length - 1 ? 'disabled' : ''}><i class='bx bx-down-arrow-alt'></i></button>
+                        <button class="icon-btn danger" data-delete="home.stats" data-index="${i}"><i class='bx bx-trash'></i></button>
+                    </div>
+                </div>
+                <div class="item-body cols-2">
+                    <div><label>Value</label><input type="text" value="${escAttr(s.value)}" data-path="home.stats.${i}.value" placeholder="2+"></div>
+                    <div><label>Label</label><input type="text" value="${escAttr(s.label)}" data-path="home.stats.${i}.label" placeholder="Years Experience"></div>
+                </div>
+            </div>
+        `).join('');
+    };
+
+    const addStat = () => {
+        if (!data.home) data.home = {};
+        if (!Array.isArray(data.home.stats)) data.home.stats = [];
+        data.home.stats.push({ value: '0+', label: 'New Metric' });
+        saveDraft();
+        renderStats();
     };
 
     const renderRoles = () => {
@@ -557,10 +611,16 @@
     };
 
     const renderProjectCard = (p, i, total) => `
-        <div class="project-item">
+        <div class="project-item ${p.featured ? 'is-featured' : ''}">
             <div class="item-header">
-                <span class="item-title">#${i + 1} ${escHtml(p.title || 'Project')}</span>
+                <span class="item-title">
+                    ${p.featured ? '<i class="bx bxs-star" style="color:#f59e0b;margin-right:6px"></i>' : ''}
+                    #${i + 1} ${escHtml(p.title || 'Project')}
+                </span>
                 <div class="item-actions">
+                    <button class="icon-btn ${p.featured ? 'active' : ''}" data-feature="${i}" title="Mark as Featured Project">
+                        <i class='bx ${p.featured ? 'bxs-star' : 'bx-star'}'></i>
+                    </button>
                     <button class="icon-btn" data-move="projects" data-index="${i}" data-dir="up" ${i === 0 ? 'disabled' : ''}><i class='bx bx-up-arrow-alt'></i></button>
                     <button class="icon-btn" data-move="projects" data-index="${i}" data-dir="down" ${i === total - 1 ? 'disabled' : ''}><i class='bx bx-down-arrow-alt'></i></button>
                     <button class="icon-btn danger" data-delete="projects" data-index="${i}"><i class='bx bx-trash'></i></button>
@@ -615,10 +675,24 @@
         renderSocials('contact');
     };
 
-    // ============ MOVE / DELETE ============
+    // ============ MOVE / DELETE / FEATURE ============
     document.addEventListener('click', (e) => {
         const delBtn = e.target.closest('[data-delete]');
         const moveBtn = e.target.closest('[data-move]');
+        const featureBtn = e.target.closest('[data-feature]');
+
+        if (featureBtn) {
+            const idx = parseInt(featureBtn.dataset.feature, 10);
+            if (!Array.isArray(data.projects)) return;
+            const wasFeatured = !!data.projects[idx]?.featured;
+            // Only one project can be featured at a time
+            data.projects.forEach((p, pi) => {
+                if (p) p.featured = !wasFeatured && pi === idx;
+            });
+            saveDraft();
+            renderProjectsPanel();
+            return;
+        }
 
         if (delBtn) {
             const path = delBtn.dataset.delete.split('.');
@@ -651,6 +725,7 @@
     const rerenderAfterMutation = (path) => {
         const joined = path.join('.');
         if (joined === 'home.roles') return renderRoles();
+        if (joined === 'home.stats') return renderStats();
         if (joined === 'home.socials') return renderSocials('home');
         if (joined === 'contact.socials') return renderSocials('contact');
         if (joined === 'resume.experience.items') return renderResumeItems('experience');

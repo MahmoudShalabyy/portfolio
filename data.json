@@ -10,6 +10,12 @@
     "description": "Full Stack Developer with hands-on experience in Laravel, currently building and maintaining multi-tenant web applications, ERP modules, and e-learning systems. Comfortable working with RESTful APIs, payment integrations, and modern front-end tools. Quick learner who thrives in collaborative environments.",
     "cvLink": "https://drive.google.com/file/d/1I912tR0T2EekPMt3eStm4_c574NcaPxL/view?usp=drive_link",
     "profileImage": "./images/profile.jpeg",
+    "available": true,
+    "stats": [
+      { "value": "2+", "label": "Years Experience" },
+      { "value": "10+", "label": "Projects Delivered" },
+      { "value": "Laravel", "label": "& Full-Stack" }
+    ],
     "socials": [
       { "name": "Github", "url": "https://github.com/MahmoudShalabyy", "icon": "bxl-github" },
       { "name": "LinkedIn", "url": "https://www.linkedin.com/in/mahmoud-shalaby-58b237227/", "icon": "bxl-linkedin" },
@@ -54,12 +60,6 @@
       "description": "Over the years I have learned many skills and techniques in college and in intensive programs and trainings focused on the field of Full Stack Development gaining hands-on experience in this technologies and best coding practice.",
       "items": [
         {
-          "year": "2019 - 2023",
-          "title": "Bachelor's in Computers and AI",
-          "company": "Benha University",
-          "description": "GPA: 3.33 (84.6%). Graduation Project: Smart Glasses For Blind Using ML — Grade: A+."
-        },
-        {
           "year": "03/2025 - 08/2025",
           "title": "Full Stack Web Development Internship",
           "company": "ITI",
@@ -76,6 +76,12 @@
           "title": "Full-Stack Web Development Bootcamp",
           "company": "Udemy",
           "description": "Mastering HTML, CSS, Javascript, Node.Js, React.Js, PostgreSQL, Web3"
+        },
+        {
+          "year": "2019 - 2023",
+          "title": "Bachelor's in Computers and AI",
+          "company": "Benha University",
+          "description": "GPA: 3.33 (84.6%). Graduation Project: Smart Glasses For Blind Using ML — Grade: A+."
         }
       ]
     },

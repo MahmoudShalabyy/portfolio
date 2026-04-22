@@ -549,6 +549,18 @@ input[type="color"] {
     border: 1px solid var(--border);
     border-radius: var(--radius);
     overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.project-item.is-featured {
+    border-color: #f59e0b;
+    box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.2);
+}
+
+.icon-btn.active {
+    background: rgba(245, 158, 11, 0.15);
+    border-color: rgba(245, 158, 11, 0.4);
+    color: #f59e0b;
 }
 
 .project-item .item-header {

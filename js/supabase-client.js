@@ -1,5 +1,7 @@
 (() => {
     const { SUPABASE_URL, SUPABASE_KEY, STORAGE_BUCKET } = window.PORTFOLIO_CONFIG;
+    // Single auth client for login/save. Public reads go through raw fetch
+    // so expired JWTs don't break the public portfolio page.
     const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
     const api = {
@@ -7,13 +9,15 @@
         bucket: STORAGE_BUCKET,
 
         async fetchPortfolio() {
-            const { data, error } = await client
-                .from('portfolio')
-                .select('data')
-                .limit(1)
-                .single();
-            if (error) throw error;
-            return data?.data || null;
+            const res = await fetch(`${SUPABASE_URL}/rest/v1/portfolio?select=data&limit=1`, {
+                headers: {
+                    apikey: SUPABASE_KEY,
+                    Authorization: `Bearer ${SUPABASE_KEY}`,
+                },
+            });
+            if (!res.ok) throw new Error(`Fetch failed (${res.status})`);
+            const rows = await res.json();
+            return rows?.[0]?.data || null;
         },
 
         async savePortfolio(portfolioData) {
