@@ -43,12 +43,15 @@
         (function() {
             var saved = localStorage.getItem('mode');
             var isLight = saved === 'light';
-            document.documentElement.style.background = isLight ? '#fafafa' : '#0a0a0f';
-            if (isLight) {
-                document.documentElement.classList.add('pre-light');
-            } else {
-                document.documentElement.classList.add('pre-dark');
-            }
+            var bg = isLight ? '#fafafa' : '#0a0a0f';
+            document.documentElement.style.background = bg;
+            document.documentElement.classList.add(isLight ? 'pre-light' : 'pre-dark');
+            // Hide body until app.js finishes rendering — prevents flash of
+            // stale hardcoded HTML before Supabase data arrives.
+            var style = document.createElement('style');
+            style.id = '__boot-hide';
+            style.textContent = 'body{visibility:hidden}body.ready{visibility:visible}';
+            document.head.appendChild(style);
         })();
     </script>
 </head>

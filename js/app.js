@@ -501,5 +501,6 @@
         console.error('Failed to load portfolio data:', err);
     } finally {
         document.body.classList.add('loaded');
+        document.body.classList.add('ready');
     }
 })();
