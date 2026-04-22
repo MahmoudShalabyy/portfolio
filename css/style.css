@@ -21,6 +21,12 @@ body {
     color: var(--white-color);
     background: var(--bg-color);
     scrollbar-color: var(--main-color) var(--second-bg-color);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+body.loaded {
+    opacity: 1;
 }
 
 
