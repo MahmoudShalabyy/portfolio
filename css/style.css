@@ -17,15 +17,12 @@ html {
     scroll-padding-top: 8rem;
     overflow-x: hidden;
     width: 100%;
-    background: #0a0a0f;
 }
 
 body {
     color: var(--white-color);
     background: var(--bg-color);
     scrollbar-color: var(--main-color) var(--second-bg-color);
-    opacity: 0;
-    transition: opacity 0.25s ease;
     overflow-x: hidden;
     width: 100%;
     position: relative;
