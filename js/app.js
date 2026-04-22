@@ -207,12 +207,12 @@
             const origIndex = projects.indexOf(p);
             const num = String(origIndex + 1).padStart(2, '0');
             const demoLink = p.demoUrl ? `
-                <a href="${escapeHtml(p.demoUrl)}" target="_blank" rel="noopener" title="Live Demo" aria-label="Live Demo">
-                    <i class='bx bx-link-external'></i>
+                <a href="${escapeHtml(p.demoUrl)}" target="_blank" rel="noopener" class="card-link primary">
+                    <i class='bx bx-link-external'></i><span>Live Demo</span>
                 </a>` : '';
             const githubLink = p.githubUrl ? `
-                <a href="${escapeHtml(p.githubUrl)}" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
-                    <i class='bx bxl-github'></i>
+                <a href="${escapeHtml(p.githubUrl)}" target="_blank" rel="noopener" class="card-link ghost">
+                    <i class='bx bxl-github'></i><span>Code</span>
                 </a>` : '';
             const img = p.image
                 ? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}" loading="lazy">`
@@ -229,15 +229,13 @@
                 <article class="project-card">
                     <div class="project-card-visual">
                         ${img}
-                        <div class="project-card-overlay">
-                            <div class="project-card-links">${demoLink}${githubLink}</div>
-                        </div>
                     </div>
                     <div class="project-card-body">
                         <span class="project-card-num">${num}</span>
                         <h4>${escapeHtml(p.title)}</h4>
                         <p>${escapeHtml(p.description)}</p>
                         <div class="project-card-tech">${techPreview}${extra}</div>
+                        <div class="project-card-actions">${demoLink}${githubLink}</div>
                     </div>
                 </article>
             `;
