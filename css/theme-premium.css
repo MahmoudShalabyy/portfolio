@@ -764,6 +764,65 @@ body.light-mode .resume-list.timeline .resume-item:hover {
     box-shadow: 0 20px 40px -15px rgba(139, 92, 246, 0.25);
 }
 
+/* A lone entry has nothing to alternate against, so a half-width card stranded
+   beside the line reads as a layout bug. Let it span the full width instead. */
+.resume-list.timeline:has(.resume-item:only-child)::before {
+    display: none;
+}
+
+.resume-list.timeline .resume-item:only-child {
+    width: 100%;
+}
+
+.resume-list.timeline .resume-item:only-child::after,
+.resume-list.timeline .resume-item:only-child .resume-item-arrow {
+    display: none;
+}
+
+/* Achievement bullets under a role */
+.resume-bullets {
+    margin: 1.4rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+}
+
+.resume-bullets li {
+    position: relative;
+    padding-left: 1.8rem;
+    font-size: 1.45rem;
+    line-height: 1.65;
+    opacity: 0.88;
+}
+
+.resume-bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.72em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+}
+
+.resume-bullets a {
+    color: #a78bfa;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(167, 139, 250, 0.4);
+    white-space: nowrap;
+}
+
+.resume-bullets a:hover {
+    border-bottom-color: currentColor;
+}
+
+body.light-mode .resume-bullets a {
+    color: #7c3aed;
+    border-bottom-color: rgba(124, 58, 237, 0.4);
+}
+
 /* Mobile: single column, line shifted to left */
 @media screen and (max-width: 768px) {
     .resume-list.timeline {

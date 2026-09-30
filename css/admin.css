@@ -607,6 +607,44 @@ input[type="color"] {
     margin-top: 8px;
 }
 
+/* Bullet points under a resume entry */
+.bullets-section {
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+    margin-top: 4px;
+}
+
+.bullets-section .hint {
+    font-weight: 400;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-left: 6px;
+}
+
+.bullet-list {
+    display: grid;
+    gap: 8px;
+    margin: 8px 0;
+}
+
+.bullet-row {
+    display: grid;
+    grid-template-columns: 1fr 32px;
+    gap: 6px;
+    align-items: start;
+}
+
+.bullet-row textarea {
+    min-height: 72px;
+    resize: vertical;
+}
+
+.bullet-row .icon-btn {
+    width: 28px;
+    height: 28px;
+    margin-top: 4px;
+}
+
 .tech-row {
     display: grid;
     grid-template-columns: 1fr 1fr 44px 32px;

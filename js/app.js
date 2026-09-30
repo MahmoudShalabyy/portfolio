@@ -83,20 +83,41 @@
         profileImg.alt = `${home.name} profile picture`;
     };
 
+    // Turns bare URLs in already-escaped text into links, so a bullet can end
+    // with "Live: https://..." and stay clickable.
+    const linkify = (escaped) => escaped.replace(
+        /https?:\/\/[^\s<]+[^\s<.,;:)]/g,
+        (match) => {
+            const href = match.replace(/&amp;/g, '&');
+            const label = match.replace(/^https?:\/\//, '');
+            return `<a href="${href}" target="_blank" rel="noopener">${label}</a>`;
+        }
+    );
+
     const renderResume = (resume) => {
         const mainBox = document.querySelector('.resume-main-box');
         mainBox.querySelector('h2').textContent = resume.headline;
         mainBox.querySelector('.desc').textContent = resume.summary;
 
-        const renderItems = (items) => items.map(it => `
+        const renderItems = (items) => items.map(it => {
+            const summary = it.description
+                ? `<p>${escapeHtml(it.description)}</p>`
+                : '';
+            const bullets = Array.isArray(it.bullets) && it.bullets.length
+                ? `<ul class="resume-bullets">${it.bullets
+                    .map(b => `<li>${linkify(escapeHtml(b))}</li>`).join('')}</ul>`
+                : '';
+            return `
             <div class="resume-item">
                 <span class="resume-item-arrow"></span>
                 <p class="year">${escapeHtml(it.year)}</p>
                 <h3>${escapeHtml(it.title)}</h3>
                 <div class="company">${escapeHtml(it.company)}</div>
-                <p>${escapeHtml(it.description)}</p>
+                ${summary}
+                ${bullets}
             </div>
-        `).join('');
+        `;
+        }).join('');
 
         const expEl = document.querySelector('.resume-details.experience');
         expEl.querySelector('.desc').textContent = resume.experience.description;

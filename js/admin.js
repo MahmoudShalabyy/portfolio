@@ -199,6 +199,7 @@
                 'add-contact-social': () => addSocial('contact'),
                 'add-experience': () => addResumeItem('experience'),
                 'add-education': () => addResumeItem('education'),
+                'add-bullet': (btn) => addBullet(btn),
                 'add-skill': addSkill,
                 'add-about': addAboutItem,
                 'add-project': addProject,
@@ -532,9 +533,34 @@
                     <div><label>Title</label><input type="text" value="${escAttr(it.title)}" data-path="resume.${which}.items.${i}.title"></div>
                     <div class="full-row"><label>Company / Institution</label><input type="text" value="${escAttr(it.company)}" data-path="resume.${which}.items.${i}.company"></div>
                     <div class="full-row"><label>Description</label><textarea data-path="resume.${which}.items.${i}.description">${escHtml(it.description)}</textarea></div>
+                    <div class="full-row bullets-section">
+                        <label>Bullet Points <span class="hint">shown as a list under the description; a bare URL becomes a link</span></label>
+                        <div class="bullet-list">
+                            ${(it.bullets || []).map((b, bi) => `
+                                <div class="bullet-row">
+                                    <textarea data-path="resume.${which}.items.${i}.bullets.${bi}"
+                                        placeholder="What you built, and the outcome">${escHtml(b)}</textarea>
+                                    <button class="icon-btn danger" data-delete="resume.${which}.items.${i}.bullets" data-index="${bi}"><i class='bx bx-x'></i></button>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <button type="button" class="btn-add small-add" data-action="add-bullet"
+                            data-which="${which}" data-item-index="${i}"><i class='bx bx-plus'></i> Add Bullet</button>
+                    </div>
                 </div>
             </div>
         `).join('');
+    };
+
+    const addBullet = (btn) => {
+        ensureResume();
+        const which = btn.dataset.which;
+        const idx = parseInt(btn.dataset.itemIndex, 10);
+        const item = data.resume[which].items[idx];
+        if (!Array.isArray(item.bullets)) item.bullets = [];
+        item.bullets.push('');
+        saveDraft();
+        renderResumeItems(which);
     };
 
     const addResumeItem = (which) => {
@@ -739,8 +765,9 @@
         if (joined === 'home.stats') return renderStats();
         if (joined === 'home.socials') return renderSocials('home');
         if (joined === 'contact.socials') return renderSocials('contact');
-        if (joined === 'resume.experience.items') return renderResumeItems('experience');
-        if (joined === 'resume.education.items') return renderResumeItems('education');
+        // Also catches nested paths like resume.experience.items.0.bullets
+        if (joined.startsWith('resume.experience.items')) return renderResumeItems('experience');
+        if (joined.startsWith('resume.education.items')) return renderResumeItems('education');
         if (joined === 'resume.skills.items') return renderSkills();
         if (joined === 'resume.about.info') return renderAboutItems();
         if (joined === 'projects' || joined.startsWith('projects')) return renderProjectsPanel();
