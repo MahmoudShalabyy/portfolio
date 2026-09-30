@@ -46,12 +46,26 @@
             var bg = isLight ? '#fafafa' : '#0a0a0f';
             document.documentElement.style.background = bg;
             document.documentElement.classList.add(isLight ? 'pre-light' : 'pre-dark');
+
+            // Point the theme stylesheet at the saved mode now rather than
+            // waiting for app.js, so the theme is right even if it never runs.
+            var modeLink = document.getElementById('mode');
+            if (modeLink) modeLink.href = isLight ? './css/light.css' : './css/dark.css';
+
             // Hide everything except the loading screen until app.js finishes
             // rendering — prevents flash of stale hardcoded HTML.
             var style = document.createElement('style');
             style.id = '__boot-hide';
             style.textContent = 'body > *:not(.loading-screen){visibility:hidden}body.ready > *{visibility:visible}';
             document.head.appendChild(style);
+
+            // Failsafe: if app.js never finishes — blocked CDN, parse error, no
+            // JS at all — show the static markup instead of a blank page forever.
+            setTimeout(function () {
+                if (!document.body || document.body.classList.contains('ready')) return;
+                document.body.classList.add('ready', 'loaded');
+                document.body.classList.add(isLight ? 'light-mode' : 'dark-mode');
+            }, 8000);
         })();
     </script>
 </head>
@@ -94,10 +108,9 @@
                 <span style="--i:2;" data-text="Back-End Developer">Back-End Developer</span>
                 <span style="--i:1;" data-text="Software Developer">Software Developer</span>
             </h2>
-            <p>A results-driven Full Stack Developer with a strong background in building scalable and high-performance
-                systems. Passionate about solving complex problems and optimizing system efficiency, I leverage my
-                analytical skills and technical expertise to develop robust back-end and Front-End solutions that align
-                with business needs and drive continuous growth.</p>
+            <p>Full Stack Laravel Developer building multi-tenant SaaS, ERP modules and e-learning platforms end to
+                end, from client requirements to production. I work with PHP, Laravel, MySQL, REST APIs and payment
+                integrations, and I use an AI-assisted workflow (Claude Code) for specs, implementation and review.</p>
 
             <div class="social-section">
                 <a href="https://drive.google.com/file/d/1I912tR0T2EekPMt3eStm4_c574NcaPxL/view?usp=drive_link"
@@ -107,19 +120,14 @@
                         class="bx-burst-hover"><i class="bx bxl-github"></i></a>
                     <a href="https://www.linkedin.com/in/mahmoud-shalaby-58b237227/" target="_blank" rel="noopener"
                         title="LinkedIn" class="bx-burst-hover"><i class="bx bxl-linkedin"></i></a>
-                    <a href="https://web.facebook.com/ghrthygfhdfgfgdhdfgh" target="_blank" rel="noopener"
-                        title="Facebook" class="bx-burst-hover"><i class="bx bxl-facebook"></i></a>
-                    <a href="https://leetcode.com/u/mahmoudshalabyy4/" target="_blank" rel="noopener" title="LeetCode"
-                        class="bx-burst-hover"><i class="bx bx-code-alt"></i></a>
-                    <a href="https://www.upwork.com/freelancers/~011eaffdd3a6074307" target="_blank" rel="noopener"
-                        title="UpWork" class="bx-burst-hover"><i class="bx bxl-upwork"></i></a>
                 </div>
             </div>
         </div>
         <div class="home-img">
             <div class="img-box">
                 <div class="img-item">
-                    <img src="./images/profile.jpeg" alt="Mahmoud Shalaby profile picture">
+                    <img src="./images/synced/profile-1776787550979-27kxs1.jpg"
+                        alt="Mahmoud Shalaby profile picture">
                 </div>
             </div>
         </div>
@@ -153,32 +161,17 @@
                 <article class="resume-details experience active">
                     <h2 class="heading">My <span>Experience</span></h2>
                     <p class="desc">
-                        Experienced Software Developer with a strong background in backend and full-stack development.
-                        Skilled in building scalable, secure, and high-performance applications. Passionate about
-                        problem-solving, innovation, and delivering efficient digital solutions.
+                        Full Stack Laravel Developer working on multi-tenant systems, ERP modules and e-learning
+                        platforms. Sole developer on my projects: I gather requirements from clients, plan, build,
+                        deliver and iterate.
                     </p>
                     <div class="resume-list">
                         <div class="resume-item">
-                            <p class="year">2025 - present</p>
-                            <h3>Full Stack Web Developer</h3>
-                            <div class="company">Information Technology Institute (ITI) - New Capital Branch</div>
-                            <p>Full Stack Web Development (open source) using PHP and Angular Intensive Training Program
-                            </p>
-                        </div>
-
-                        <div class="resume-item">
-                            <p class="year">2024 - present</p>
-                            <h3>Full Stack Developer</h3>
-                            <div class="company">Upwork</div>
-                            <p>As a Full Stack Developer, I work on both the front-end and back-end of web applications
-                            </p>
-                        </div>
-
-                        <div class="resume-item">
-                            <p class="year">2024 - 2025</p>
-                            <h3>Back End Web Development Training</h3>
-                            <div class="company">Route Academy</div>
-                            <p>specializing in Node.js, Next.JS, JavaScript, Mongo DB, and REST APIs.</p>
+                            <p class="year">08/2025 - Present</p>
+                            <h3>Full Stack Laravel Developer</h3>
+                            <div class="company">Hunt ERP</div>
+                            <p>Multi-tenant clinic platform, the ZMK e-learning ecosystem, a SaaS subscription product
+                                built on the core ERP modules, and the Paymob payment integration.</p>
                         </div>
                     </div>
                 </article>
@@ -191,10 +184,10 @@
 
                     <div class="resume-list">
                         <div class="resume-item">
-                            <p class="year">2025</p>
-                            <h3>Full Stack Web Development Internship</h3>
-                            <p class="company">Information Technology Institute (ITI)</p>
-                            <p>Full Stack Web Development (open source) using PHP and Angular</p>
+                            <p class="year">03/2025 - 08/2025</p>
+                            <h3>Full Stack Development — Open-Source Track (Intensive Training)</h3>
+                            <p class="company">Information Technology Institute (ITI) — New Capital Branch</p>
+                            <p>Intensive full stack development training program, open-source track.</p>
                         </div>
 
                         <div class="resume-item">
@@ -322,12 +315,6 @@
                             class="bx bxl-github bx-tada-hover"></i></a>
                     <a href="https://www.linkedin.com/in/mahmoud-shalaby-58b237227/" target="_blank" rel="noopener"
                         title="LinkedIn"><i class="bx bxl-linkedin bx-tada-hover"></i></a>
-                    <a href="https://web.facebook.com/ghrthygfhdfgfgdhdfgh" target="_blank" rel="noopener"
-                        title="Facebook"><i class="bx bxl-facebook bx-tada-hover"></i></a>
-                    <a href="https://leetcode.com/u/mahmoudshalabyy4/" target="_blank" rel="noopener" title="LeetCode"><i
-                            class="bx bx-code-alt bx-tada-hover"></i></a>
-                    <a href="https://www.upwork.com/freelancers/~011eaffdd3a6074307" target="_blank" rel="noopener"
-                        title="UpWork"><i class="bx bxl-upwork bx-tada-hover"></i></a>
                 </div>
             </div>
 

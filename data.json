@@ -32,25 +32,10 @@
         "url": "https://www.linkedin.com/in/mahmoud-shalaby-58b237227/",
         "icon": "bxl-linkedin",
         "name": "LinkedIn"
-      },
-      {
-        "url": "https://web.facebook.com/ghrthygfhdfgfgdhdfgh",
-        "icon": "bxl-facebook",
-        "name": "Facebook"
-      },
-      {
-        "url": "https://leetcode.com/u/mahmoudshalabyy4/",
-        "icon": "bx-code-alt",
-        "name": "LeetCode"
-      },
-      {
-        "url": "https://www.upwork.com/freelancers/~011eaffdd3a6074307",
-        "icon": "bxl-upwork",
-        "name": "UpWork"
       }
     ],
     "available": true,
-    "description": "Full Stack Developer with hands-on experience in Laravel, currently building and maintaining multi-tenant web applications, ERP modules, and e-learning systems. Comfortable working with RESTful APIs, payment integrations, and modern front-end tools. Quick learner who thrives in collaborative environments.",
+    "description": "Full Stack Laravel Developer building multi-tenant SaaS, ERP modules and e-learning platforms end to end, from client requirements to production. I work with PHP, Laravel, MySQL, REST APIs and payment integrations, and I use an AI-assisted workflow (Claude Code) for specs, implementation and review.",
     "profileImage": "./images/synced/profile-1776787550979-27kxs1.jpg"
   },
   "resume": {
@@ -240,15 +225,15 @@
       ],
       "description": "Strong <b>problem-solving</b> and <b>critical thinking</b> abilities, with <b>effective communication</b> and <b>collaboration</b> in team environments. Skilled in <b>time management</b> and <b>adapting</b> to new technologies. Demonstrated leadership and initiative in various projects."
     },
-    "summary": "Extensive experience in various fields, I have strong problem-solving skills, scalable solutions, high performance, collaborative and goal-oriented.",
+    "summary": "I take projects end to end — gathering requirements from clients, planning, building, delivering and iterating — across multi-tenant SaaS, ERP modules and e-learning platforms.",
     "headline": "Why Hire Me ?",
     "education": {
       "items": [
         {
           "year": "03/2025 - 08/2025",
-          "title": "Full Stack Web Development Internship",
-          "company": "ITI",
-          "description": "Open-Source Track using PHP, Laravel, and Angular."
+          "title": "Full Stack Development — Open-Source Track (Intensive Training)",
+          "company": "Information Technology Institute (ITI) — New Capital Branch",
+          "description": "Intensive full stack development training program, open-source track."
         },
         {
           "year": "2024 - 2025",
@@ -277,28 +262,17 @@
           "year": "08/2025 - Present",
           "title": "Full Stack Laravel Developer",
           "company": "Hunt ERP",
-          "description": "Building multi-tenant SaaS systems, ERP modules, and e-learning platforms using Laravel 12 with Paymob and VdoCipher integrations."
-        },
-        {
-          "year": "2024 - present",
-          "title": "Full Stack Developer",
-          "company": "Upwork",
-          "description": "As a Full Stack Developer, I work on both the front-end and back-end of web applications"
-        },
-        {
-          "year": "03/2025 - 08/2025",
-          "title": "Full Stack Development Intensive Program",
-          "company": "ITI - New Capital Branch",
-          "description": "Open-Source Track using PHP, Laravel, and Angular."
-        },
-        {
-          "year": "2024 - 2025",
-          "title": "Back End Web Development Training",
-          "company": "Route Academy",
-          "description": "specializing in Node.js, Next.JS, JavaScript, Mongo DB, and REST APIs."
+          "description": "Sole developer on my projects: I gather requirements from clients, plan, build, deliver and iterate.",
+          "bullets": [
+            "Built a multi-tenant clinic management platform from scratch (Laravel 12, database-per-tenant): scheduling with conflict and capacity checks using transactions and row locks, public booking with capacity holds, patient portal, prescriptions, invoices, reports, Arabic/English. Live: https://clinics.huntech.net",
+            "Built the ZMK e-learning ecosystem: 3 integrated systems, about 75 features. Student website and admin dashboard from scratch, plus an E-Learning module and two-way integration in the client's ERP. VdoCipher playback with student watermark, quizzes, progress tracking, rewards, email OTP, Paymob checkout. Live: https://zmk-eg.com",
+            "Turned the core ERP modules into a SaaS subscription product for small shops: database-per-tenant, trials and grace periods, renewals that keep remaining time, module licensing via middleware, per-user licensing. Live: https://subscription.hunt-eg.com",
+            "Built the Paymob payment integration for the company website: Unified Checkout, HMAC-SHA512 verification on both redirect and webhook, activation of subscriptions, modules and extra users through REST APIs.",
+            "Enhancements and bug fixes across ERP modules (Accounting, HR, Inventory, CRM, POS)."
+          ]
         }
       ],
-      "description": "Experienced Full Stack Laravel Developer with a strong background in multi-tenant systems, ERP modules, and e-learning platforms. Skilled in building scalable, secure, and high-performance applications. Passionate about problem-solving, innovation, and delivering efficient digital solutions."
+      "description": "Full Stack Laravel Developer working on multi-tenant systems, ERP modules and e-learning platforms. Sole developer on my projects: I gather requirements from clients, plan, build, deliver and iterate."
     }
   },
   "contact": {
@@ -315,21 +289,6 @@
         "url": "https://www.linkedin.com/in/mahmoud-shalaby-58b237227/",
         "icon": "bxl-linkedin",
         "name": "LinkedIn"
-      },
-      {
-        "url": "https://web.facebook.com/ghrthygfhdfgfgdhdfgh",
-        "icon": "bxl-facebook",
-        "name": "Facebook"
-      },
-      {
-        "url": "https://leetcode.com/u/mahmoudshalabyy4/",
-        "icon": "bx-code-alt",
-        "name": "LeetCode"
-      },
-      {
-        "url": "https://www.upwork.com/freelancers/~011eaffdd3a6074307",
-        "icon": "bxl-upwork",
-        "name": "UpWork"
       }
     ],
     "description": "If you need a professional website design or want to build a website from scratch, I'm here to help! I can also create creative landing pages that boost your conversion rate. Additionally, I have experience in website management and providing technical support to ensure smooth and efficient operation."
@@ -373,7 +332,7 @@
       "demoUrl": "https://zmk-eg.com/",
       "featured": true,
       "githubUrl": "",
-      "description": "Full e-learning platform built with Laravel 12. Features student portal, Paymob payments, OTP auth, VdoCipher video streaming, quizzes, certificates, and progress tracking."
+      "description": "Full e-learning platform built with Laravel 12: student portal, Paymob checkout, email OTP auth, VdoCipher playback with student watermark, quizzes, progress tracking, rewards, and accredited completion certificates (PDF)."
     },
     {
       "tech": [
@@ -408,7 +367,7 @@
       "demoUrl": "https://clinics.huntech.net/",
       "featured": false,
       "githubUrl": "",
-      "description": "Multi-tenant SaaS for clinics handling registration, appointments, patient records, prescriptions, invoices, and expense tracking with isolated data per tenant."
+      "description": "Multi-tenant clinic platform (database-per-tenant) with scheduling backed by conflict and capacity checks, public booking with capacity holds, patient portal, prescriptions, invoices, reports, and Arabic/English support."
     },
     {
       "tech": [
@@ -443,7 +402,7 @@
       "demoUrl": "https://subscription.hunt-eg.com/login",
       "featured": false,
       "githubUrl": "",
-      "description": "Subscription platform with Paymob payments, self-service renewal, modular activation, extra-user purchases, and automated lifecycle management for ERP clients."
+      "description": "SaaS subscription product built on the core ERP modules: database-per-tenant, trials and grace periods, Paymob checkout, self-service renewal that keeps remaining time, automatic expiry at the end of the term, and module and per-user licensing."
     },
     {
       "tech": [
