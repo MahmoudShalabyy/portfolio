@@ -7,28 +7,271 @@
       "Front-End Developer",
       "Back-End Developer"
     ],
-    "description": "Full Stack Developer with hands-on experience in Laravel, currently building and maintaining multi-tenant web applications, ERP modules, and e-learning systems. Comfortable working with RESTful APIs, payment integrations, and modern front-end tools. Quick learner who thrives in collaborative environments.",
-    "cvLink": "https://drive.google.com/file/d/1I912tR0T2EekPMt3eStm4_c574NcaPxL/view?usp=drive_link",
-    "profileImage": "./images/profile.jpeg",
-    "available": true,
     "stats": [
-      { "value": "2+", "label": "Years Experience" },
-      { "value": "10+", "label": "Projects Delivered" },
-      { "value": "Laravel", "label": "& Full-Stack" }
+      {
+        "label": "Years Experience",
+        "value": "2+"
+      },
+      {
+        "label": "Projects Delivered",
+        "value": "10+"
+      },
+      {
+        "label": "& Full-Stack",
+        "value": "Laravel"
+      }
     ],
+    "cvLink": "https://drive.google.com/file/d/1I912tR0T2EekPMt3eStm4_c574NcaPxL/view?usp=drive_link",
     "socials": [
-      { "name": "Github", "url": "https://github.com/MahmoudShalabyy", "icon": "bxl-github" },
-      { "name": "LinkedIn", "url": "https://www.linkedin.com/in/mahmoud-shalaby-58b237227/", "icon": "bxl-linkedin" },
-      { "name": "Facebook", "url": "https://web.facebook.com/ghrthygfhdfgfgdhdfgh", "icon": "bxl-facebook" },
-      { "name": "LeetCode", "url": "https://leetcode.com/u/mahmoudshalabyy4/", "icon": "bx-code-alt" },
-      { "name": "UpWork", "url": "https://www.upwork.com/freelancers/~011eaffdd3a6074307", "icon": "bxl-upwork" }
-    ]
+      {
+        "url": "https://github.com/MahmoudShalabyy",
+        "icon": "bxl-github",
+        "name": "Github"
+      },
+      {
+        "url": "https://www.linkedin.com/in/mahmoud-shalaby-58b237227/",
+        "icon": "bxl-linkedin",
+        "name": "LinkedIn"
+      },
+      {
+        "url": "https://web.facebook.com/ghrthygfhdfgfgdhdfgh",
+        "icon": "bxl-facebook",
+        "name": "Facebook"
+      },
+      {
+        "url": "https://leetcode.com/u/mahmoudshalabyy4/",
+        "icon": "bx-code-alt",
+        "name": "LeetCode"
+      },
+      {
+        "url": "https://www.upwork.com/freelancers/~011eaffdd3a6074307",
+        "icon": "bxl-upwork",
+        "name": "UpWork"
+      }
+    ],
+    "available": true,
+    "description": "Full Stack Developer with hands-on experience in Laravel, currently building and maintaining multi-tenant web applications, ERP modules, and e-learning systems. Comfortable working with RESTful APIs, payment integrations, and modern front-end tools. Quick learner who thrives in collaborative environments.",
+    "profileImage": "./images/synced/profile-1776787550979-27kxs1.jpg"
   },
   "resume": {
-    "headline": "Why Hire Me ?",
+    "about": {
+      "info": [
+        {
+          "label": "Name",
+          "value": "Mahmoud El-Sayed Shalaby"
+        },
+        {
+          "label": "Gender",
+          "value": "Male"
+        },
+        {
+          "label": "Age",
+          "value": "23 years old"
+        },
+        {
+          "label": "Status",
+          "value": "Single"
+        },
+        {
+          "label": "City",
+          "value": "Cairo"
+        },
+        {
+          "label": "Full Time",
+          "value": "Available"
+        },
+        {
+          "label": "Freelance",
+          "value": "Available"
+        },
+        {
+          "label": "Phone",
+          "value": "01027326622"
+        },
+        {
+          "label": "Email",
+          "value": "mahmoudshalabyyy4@gmail.com"
+        }
+      ],
+      "description": "I am passionate about technology and computing, with a constant desire to learn and grow. I enjoy taking on technical challenges and solving complex problems. I also believe in maintaining a balance between work and personal life, and I make sure to spend time exercising and connecting with my friends and family."
+    },
+    "skills": {
+      "items": [
+        {
+          "icon": "bxl-html5",
+          "name": "HTML5",
+          "color": "#e34c26"
+        },
+        {
+          "icon": "bxl-css3",
+          "name": "CSS3",
+          "color": "#264de4"
+        },
+        {
+          "icon": "bxl-javascript",
+          "name": "JavaScript",
+          "color": "#f0db4f"
+        },
+        {
+          "icon": "bxl-typescript",
+          "name": "TypeScript",
+          "color": "#007acc"
+        },
+        {
+          "icon": "bxl-angular",
+          "name": "Angular",
+          "color": "#dd0031"
+        },
+        {
+          "icon": "bxl-bootstrap",
+          "name": "Bootstrap",
+          "color": "#563d7c"
+        },
+        {
+          "icon": "bxl-tailwind-css",
+          "name": "Tailwind",
+          "color": "#38bdf8"
+        },
+        {
+          "icon": "bxl-figma",
+          "name": "Figma",
+          "color": "#a259ff"
+        },
+        {
+          "icon": "bxl-php",
+          "name": "PHP",
+          "color": "#8892be"
+        },
+        {
+          "icon": "bxs-component",
+          "name": "Laravel",
+          "color": "#ff2d20"
+        },
+        {
+          "icon": "bxl-nodejs",
+          "name": "Node.js",
+          "color": "#3c873a"
+        },
+        {
+          "icon": "bxs-data",
+          "name": "Database",
+          "color": "#4db33d"
+        },
+        {
+          "icon": "bxl-mongodb",
+          "name": "MongoDB",
+          "color": "#47a248"
+        },
+        {
+          "icon": "bxl-postgresql",
+          "name": "PostgreSQL",
+          "color": "#336791"
+        },
+        {
+          "icon": "bxl-firebase",
+          "name": "Firebase",
+          "color": "#ffcb2b"
+        },
+        {
+          "icon": "bxl-git",
+          "name": "Git",
+          "color": "#f1502f"
+        },
+        {
+          "icon": "bxl-github",
+          "name": "GitHub",
+          "color": "#171515"
+        },
+        {
+          "icon": "bx-code-block",
+          "name": "Code-Block",
+          "color": "#6c63ff"
+        },
+        {
+          "icon": "bxl-visual-studio",
+          "name": "VS Code",
+          "color": "#0078d7"
+        },
+        {
+          "icon": "bx-terminal",
+          "name": "Terminal",
+          "color": "#4caf50"
+        },
+        {
+          "icon": "bxl-netlify",
+          "name": "Netlify",
+          "color": "#00c7b7"
+        },
+        {
+          "icon": "bxl-paypal",
+          "name": "PayPal API",
+          "color": "#003087"
+        },
+        {
+          "icon": "bxl-c-plus-plus",
+          "name": "C++",
+          "color": "#00599c"
+        },
+        {
+          "icon": "bxl-python",
+          "name": "Python",
+          "color": "#FFCA3A"
+        },
+        {
+          "icon": "bxl-java",
+          "name": "Java",
+          "color": "#5382a1"
+        },
+        {
+          "icon": "bxs-network-chart",
+          "name": "Networking",
+          "color": "#2b6777"
+        },
+        {
+          "icon": "bxs-cloud",
+          "name": "Cloud",
+          "color": "#00aaff"
+        },
+        {
+          "icon": "bxs-brain",
+          "name": "AI",
+          "color": "#ff6f61"
+        }
+      ],
+      "description": "Strong <b>problem-solving</b> and <b>critical thinking</b> abilities, with <b>effective communication</b> and <b>collaboration</b> in team environments. Skilled in <b>time management</b> and <b>adapting</b> to new technologies. Demonstrated leadership and initiative in various projects."
+    },
     "summary": "Extensive experience in various fields, I have strong problem-solving skills, scalable solutions, high performance, collaborative and goal-oriented.",
+    "headline": "Why Hire Me ?",
+    "education": {
+      "items": [
+        {
+          "year": "03/2025 - 08/2025",
+          "title": "Full Stack Web Development Internship",
+          "company": "ITI",
+          "description": "Open-Source Track using PHP, Laravel, and Angular."
+        },
+        {
+          "year": "2024 - 2025",
+          "title": "Back End Web Development Diploma",
+          "company": "Route Academy",
+          "description": "Diploma specializing in Node.js, Next.JS, JavaScript, Mongo DB, and REST APIs."
+        },
+        {
+          "year": "2019 - 2023",
+          "title": "Bachelor's in Computers and AI",
+          "company": "Benha University",
+          "description": "GPA: 3.33 (84.6%). Graduation Project: Smart Glasses For Blind Using ML — Grade: A+."
+        },
+        {
+          "year": "2022 - 2023",
+          "title": "Full-Stack Web Development Bootcamp",
+          "company": "Udemy",
+          "description": "Mastering HTML, CSS, Javascript, Node.Js, React.Js, PostgreSQL, Web3"
+        }
+      ],
+      "description": "Over the years I have learned many skills and techniques in college and in intensive programs and trainings focused on the field of Full Stack Development gaining hands-on experience in this technologies and best coding practice."
+    },
     "experience": {
-      "description": "Experienced Full Stack Laravel Developer with a strong background in multi-tenant systems, ERP modules, and e-learning platforms. Skilled in building scalable, secure, and high-performance applications. Passionate about problem-solving, innovation, and delivering efficient digital solutions.",
       "items": [
         {
           "year": "08/2025 - Present",
@@ -54,230 +297,388 @@
           "company": "Route Academy",
           "description": "specializing in Node.js, Next.JS, JavaScript, Mongo DB, and REST APIs."
         }
-      ]
-    },
-    "education": {
-      "description": "Over the years I have learned many skills and techniques in college and in intensive programs and trainings focused on the field of Full Stack Development gaining hands-on experience in this technologies and best coding practice.",
-      "items": [
-        {
-          "year": "03/2025 - 08/2025",
-          "title": "Full Stack Web Development Internship",
-          "company": "ITI",
-          "description": "Open-Source Track using PHP, Laravel, and Angular."
-        },
-        {
-          "year": "2024 - 2025",
-          "title": "Back End Web Development Diploma",
-          "company": "Route Academy",
-          "description": "Diploma specializing in Node.js, Next.JS, JavaScript, Mongo DB, and REST APIs."
-        },
-        {
-          "year": "2022 - 2023",
-          "title": "Full-Stack Web Development Bootcamp",
-          "company": "Udemy",
-          "description": "Mastering HTML, CSS, Javascript, Node.Js, React.Js, PostgreSQL, Web3"
-        },
-        {
-          "year": "2019 - 2023",
-          "title": "Bachelor's in Computers and AI",
-          "company": "Benha University",
-          "description": "GPA: 3.33 (84.6%). Graduation Project: Smart Glasses For Blind Using ML — Grade: A+."
-        }
-      ]
-    },
-    "skills": {
-      "description": "Strong <b>problem-solving</b> and <b>critical thinking</b> abilities, with <b>effective communication</b> and <b>collaboration</b> in team environments. Skilled in <b>time management</b> and <b>adapting</b> to new technologies. Demonstrated leadership and initiative in various projects.",
-      "items": [
-        { "name": "HTML5", "icon": "bxl-html5", "color": "#e34c26" },
-        { "name": "CSS3", "icon": "bxl-css3", "color": "#264de4" },
-        { "name": "JavaScript", "icon": "bxl-javascript", "color": "#f0db4f" },
-        { "name": "TypeScript", "icon": "bxl-typescript", "color": "#007acc" },
-        { "name": "Angular", "icon": "bxl-angular", "color": "#dd0031" },
-        { "name": "Bootstrap", "icon": "bxl-bootstrap", "color": "#563d7c" },
-        { "name": "Tailwind", "icon": "bxl-tailwind-css", "color": "#38bdf8" },
-        { "name": "Figma", "icon": "bxl-figma", "color": "#a259ff" },
-        { "name": "PHP", "icon": "bxl-php", "color": "#8892be" },
-        { "name": "Laravel", "icon": "bxs-component", "color": "#ff2d20" },
-        { "name": "Node.js", "icon": "bxl-nodejs", "color": "#3c873a" },
-        { "name": "Database", "icon": "bxs-data", "color": "#4db33d" },
-        { "name": "MongoDB", "icon": "bxl-mongodb", "color": "#47a248" },
-        { "name": "PostgreSQL", "icon": "bxl-postgresql", "color": "#336791" },
-        { "name": "Firebase", "icon": "bxl-firebase", "color": "#ffcb2b" },
-        { "name": "Git", "icon": "bxl-git", "color": "#f1502f" },
-        { "name": "GitHub", "icon": "bxl-github", "color": "#171515" },
-        { "name": "Code-Block", "icon": "bx-code-block", "color": "#6c63ff" },
-        { "name": "VS Code", "icon": "bxl-visual-studio", "color": "#0078d7" },
-        { "name": "Terminal", "icon": "bx-terminal", "color": "#4caf50" },
-        { "name": "Netlify", "icon": "bxl-netlify", "color": "#00c7b7" },
-        { "name": "PayPal API", "icon": "bxl-paypal", "color": "#003087" },
-        { "name": "C++", "icon": "bxl-c-plus-plus", "color": "#00599c" },
-        { "name": "Python", "icon": "bxl-python", "color": "#FFCA3A" },
-        { "name": "Java", "icon": "bxl-java", "color": "#5382a1" },
-        { "name": "Networking", "icon": "bxs-network-chart", "color": "#2b6777" },
-        { "name": "Cloud", "icon": "bxs-cloud", "color": "#00aaff" },
-        { "name": "AI", "icon": "bxs-brain", "color": "#ff6f61" }
-      ]
-    },
-    "about": {
-      "description": "I am passionate about technology and computing, with a constant desire to learn and grow. I enjoy taking on technical challenges and solving complex problems. I also believe in maintaining a balance between work and personal life, and I make sure to spend time exercising and connecting with my friends and family.",
-      "info": [
-        { "label": "Name", "value": "Mahmoud El-Sayed Shalaby" },
-        { "label": "Gender", "value": "Male" },
-        { "label": "Age", "value": "23 years old" },
-        { "label": "Status", "value": "Single" },
-        { "label": "City", "value": "Cairo" },
-        { "label": "Full Time", "value": "Available" },
-        { "label": "Freelance", "value": "Available" },
-        { "label": "Phone", "value": "01027326622" },
-        { "label": "Email", "value": "mahmoudshalabyyy4@gmail.com" }
-      ]
+      ],
+      "description": "Experienced Full Stack Laravel Developer with a strong background in multi-tenant systems, ERP modules, and e-learning platforms. Skilled in building scalable, secure, and high-performance applications. Passionate about problem-solving, innovation, and delivering efficient digital solutions."
     }
+  },
+  "contact": {
+    "email": "mahmoudshalabyyy4@gmail.com",
+    "phone": "+20 1027326622",
+    "heading": "Let's Work Together",
+    "socials": [
+      {
+        "url": "https://github.com/MahmoudShalabyy",
+        "icon": "bxl-github",
+        "name": "Github"
+      },
+      {
+        "url": "https://www.linkedin.com/in/mahmoud-shalaby-58b237227/",
+        "icon": "bxl-linkedin",
+        "name": "LinkedIn"
+      },
+      {
+        "url": "https://web.facebook.com/ghrthygfhdfgfgdhdfgh",
+        "icon": "bxl-facebook",
+        "name": "Facebook"
+      },
+      {
+        "url": "https://leetcode.com/u/mahmoudshalabyy4/",
+        "icon": "bx-code-alt",
+        "name": "LeetCode"
+      },
+      {
+        "url": "https://www.upwork.com/freelancers/~011eaffdd3a6074307",
+        "icon": "bxl-upwork",
+        "name": "UpWork"
+      }
+    ],
+    "description": "If you need a professional website design or want to build a website from scratch, I'm here to help! I can also create creative landing pages that boost your conversion rate. Additionally, I have experience in website management and providing technical support to ensure smooth and efficient operation."
   },
   "projects": [
     {
+      "tech": [
+        {
+          "icon": "bxs-component",
+          "name": "Laravel 12",
+          "color": "#ff2d20"
+        },
+        {
+          "icon": "bxl-php",
+          "name": "PHP",
+          "color": "#8892be"
+        },
+        {
+          "icon": "bxs-data",
+          "name": "MySQL",
+          "color": "#00758f"
+        },
+        {
+          "icon": "bxs-videos",
+          "name": "VdoCipher",
+          "color": "#4285f4"
+        },
+        {
+          "icon": "bxs-credit-card",
+          "name": "Paymob",
+          "color": "#1e88e5"
+        },
+        {
+          "icon": "bxl-bootstrap",
+          "name": "Bootstrap",
+          "color": "#7952b3"
+        }
+      ],
+      "image": "./images/synced/projects-1776776876246-z9pgaz.png",
       "title": "ZMK E-Learning Platform",
-      "description": "Full e-learning platform built with Laravel 12. Features student portal, Paymob payments, OTP auth, VdoCipher video streaming, quizzes, certificates, and progress tracking.",
       "demoUrl": "https://zmk-eg.com/",
+      "featured": true,
       "githubUrl": "",
-      "image": "",
-      "tech": [
-        { "name": "Laravel 12", "icon": "bxs-component", "color": "#ff2d20" },
-        { "name": "PHP", "icon": "bxl-php", "color": "#8892be" },
-        { "name": "MySQL", "icon": "bxs-data", "color": "#00758f" },
-        { "name": "VdoCipher", "icon": "bxs-videos", "color": "#4285f4" },
-        { "name": "Paymob", "icon": "bxs-credit-card", "color": "#1e88e5" },
-        { "name": "Bootstrap", "icon": "bxl-bootstrap", "color": "#7952b3" }
-      ]
+      "description": "Full e-learning platform built with Laravel 12. Features student portal, Paymob payments, OTP auth, VdoCipher video streaming, quizzes, certificates, and progress tracking."
     },
     {
+      "tech": [
+        {
+          "icon": "bxs-component",
+          "name": "Laravel",
+          "color": "#ff2d20"
+        },
+        {
+          "icon": "bxl-php",
+          "name": "PHP",
+          "color": "#8892be"
+        },
+        {
+          "icon": "bxs-data",
+          "name": "MySQL",
+          "color": "#00758f"
+        },
+        {
+          "icon": "bx-buildings",
+          "name": "Multi-Tenancy",
+          "color": "#6c63ff"
+        },
+        {
+          "icon": "bxl-bootstrap",
+          "name": "Bootstrap",
+          "color": "#7952b3"
+        }
+      ],
+      "image": "./images/synced/projects-1776776881859-ad9k13.png",
       "title": "Multi-Tenant Clinic Management System",
-      "description": "Multi-tenant SaaS for clinics handling registration, appointments, patient records, prescriptions, invoices, and expense tracking with isolated data per tenant.",
       "demoUrl": "https://clinics.huntech.net/",
+      "featured": false,
       "githubUrl": "",
-      "image": "",
-      "tech": [
-        { "name": "Laravel", "icon": "bxs-component", "color": "#ff2d20" },
-        { "name": "PHP", "icon": "bxl-php", "color": "#8892be" },
-        { "name": "MySQL", "icon": "bxs-data", "color": "#00758f" },
-        { "name": "Multi-Tenancy", "icon": "bx-buildings", "color": "#6c63ff" },
-        { "name": "Bootstrap", "icon": "bxl-bootstrap", "color": "#7952b3" }
-      ]
+      "description": "Multi-tenant SaaS for clinics handling registration, appointments, patient records, prescriptions, invoices, and expense tracking with isolated data per tenant."
     },
     {
-      "title": "SaaS Subscription System",
-      "description": "Subscription platform with Paymob payments, self-service renewal, modular activation, extra-user purchases, and automated lifecycle management for ERP clients.",
+      "tech": [
+        {
+          "icon": "bxs-component",
+          "name": "Laravel",
+          "color": "#ff2d20"
+        },
+        {
+          "icon": "bxl-php",
+          "name": "PHP",
+          "color": "#8892be"
+        },
+        {
+          "icon": "bxs-data",
+          "name": "MySQL",
+          "color": "#00758f"
+        },
+        {
+          "icon": "bxs-credit-card",
+          "name": "Paymob",
+          "color": "#1e88e5"
+        },
+        {
+          "icon": "bx-code-curly",
+          "name": "REST API",
+          "color": "#6c63ff"
+        }
+      ],
+      "image": "./images/synced/projects-1776776886696-w8a1xx.png",
+      "title": " ERP Subscription System",
       "demoUrl": "https://subscription.hunt-eg.com/login",
+      "featured": false,
       "githubUrl": "",
-      "image": "",
-      "tech": [
-        { "name": "Laravel", "icon": "bxs-component", "color": "#ff2d20" },
-        { "name": "PHP", "icon": "bxl-php", "color": "#8892be" },
-        { "name": "MySQL", "icon": "bxs-data", "color": "#00758f" },
-        { "name": "Paymob", "icon": "bxs-credit-card", "color": "#1e88e5" },
-        { "name": "REST API", "icon": "bx-code-curly", "color": "#6c63ff" }
-      ]
+      "description": "Subscription platform with Paymob payments, self-service renewal, modular activation, extra-user purchases, and automated lifecycle management for ERP clients."
     },
     {
+      "tech": [
+        {
+          "icon": "bxl-react",
+          "name": "React",
+          "color": "#61dafb"
+        },
+        {
+          "icon": "bxs-component",
+          "name": "Laravel",
+          "color": "#ff2d20"
+        },
+        {
+          "icon": "bxs-data",
+          "name": "MySQL",
+          "color": "#00758f"
+        },
+        {
+          "icon": "bxs-lock-alt",
+          "name": "Laravel Sanctum",
+          "color": "#ff2d20"
+        },
+        {
+          "icon": "bxs-brain",
+          "name": "AI Integration",
+          "color": "#ff6f61"
+        },
+        {
+          "icon": "bx-code-curly",
+          "name": "REST API",
+          "color": "#6c63ff"
+        }
+      ],
+      "image": "./images/synced/projects-1776789546380-xnoc36.jpg",
       "title": "Tadawi - Healthcare Platform",
-      "description": "Multi-stakeholder platform connecting patients, doctors, and pharmacies with AI-powered drug alternatives, OTP auth, digital prescriptions, and real-time stock visibility.",
       "demoUrl": "",
+      "featured": false,
       "githubUrl": "https://github.com/MahmoudShalabyy/Tadawi-Frontend",
-      "image": "",
-      "tech": [
-        { "name": "React", "icon": "bxl-react", "color": "#61dafb" },
-        { "name": "Laravel", "icon": "bxs-component", "color": "#ff2d20" },
-        { "name": "MySQL", "icon": "bxs-data", "color": "#00758f" },
-        { "name": "Laravel Sanctum", "icon": "bxs-lock-alt", "color": "#ff2d20" },
-        { "name": "AI Integration", "icon": "bxs-brain", "color": "#ff6f61" },
-        { "name": "REST API", "icon": "bx-code-curly", "color": "#6c63ff" }
-      ]
+      "description": "Multi-stakeholder platform connecting patients, doctors, and pharmacies with AI-powered drug alternatives, OTP auth, digital prescriptions, and real-time stock visibility."
     },
     {
-      "title": "Paper Shelf - Online Bookstore",
-      "description": "Full-featured online bookstore with multi-role access (Admin, Author, User), JWT/OTP authentication, AI book summaries via OpenAI, and Stripe payment integration.",
-      "demoUrl": "https://paper-shelf-front-endd-pent.vercel.app/",
-      "githubUrl": "https://github.com/MahmoudShalabyy/PaperShelf-backEnd.git",
+      "tech": [
+        {
+          "icon": "bxl-angular",
+          "name": "Angular",
+          "color": "#dd0031"
+        },
+        {
+          "icon": "bxl-typescript",
+          "name": "TypeScript",
+          "color": "#3178c6"
+        },
+        {
+          "icon": "bxl-bootstrap",
+          "name": "Bootstrap 5",
+          "color": "#7952b3"
+        },
+        {
+          "icon": "bxl-nodejs",
+          "name": "Node.js",
+          "color": "#68a063"
+        },
+        {
+          "icon": "bxl-mongodb",
+          "name": "MongoDB",
+          "color": "#47a248"
+        },
+        {
+          "icon": "bxs-credit-card",
+          "name": "Stripe",
+          "color": "#635bff"
+        },
+        {
+          "icon": "bxs-brain",
+          "name": "AI Integration",
+          "color": "#ff6f61"
+        }
+      ],
       "image": "./images/project/PaperShelf.png",
-      "tech": [
-        { "name": "Angular", "icon": "bxl-angular", "color": "#dd0031" },
-        { "name": "TypeScript", "icon": "bxl-typescript", "color": "#3178c6" },
-        { "name": "Bootstrap 5", "icon": "bxl-bootstrap", "color": "#7952b3" },
-        { "name": "Node.js", "icon": "bxl-nodejs", "color": "#68a063" },
-        { "name": "MongoDB", "icon": "bxl-mongodb", "color": "#47a248" },
-        { "name": "Stripe", "icon": "bxs-credit-card", "color": "#635bff" },
-        { "name": "AI Integration", "icon": "bxs-brain", "color": "#ff6f61" }
-      ]
+      "title": "Paper Shelf - Online Bookstore",
+      "demoUrl": "https://paper-shelf-front-endd-pent.vercel.app/",
+      "featured": false,
+      "githubUrl": "https://github.com/MahmoudShalabyy/PaperShelf-backEnd.git",
+      "description": "Full-featured online bookstore with multi-role access (Admin, Author, User), JWT/OTP authentication, AI book summaries via OpenAI, and Stripe payment integration."
     },
     {
-      "title": "Pack&Go E-commerce",
-      "description": "Responsive e-commerce site for travel bags with Firebase auth (Google sign-in), PayPal checkout, Firestore order tracking, and admin dashboard for product management.",
-      "demoUrl": "https://packgotrial.netlify.app/",
-      "githubUrl": "https://github.com/MahmoudShalabyy/PackAndGo.git",
+      "tech": [
+        {
+          "icon": "bxl-html5",
+          "name": "HTML5",
+          "color": "#e34c26"
+        },
+        {
+          "icon": "bxl-css3",
+          "name": "CSS3",
+          "color": "#264de4"
+        },
+        {
+          "icon": "bxl-javascript",
+          "name": "Javascript",
+          "color": "#f0db4f"
+        },
+        {
+          "icon": "bxl-firebase",
+          "name": "Firebase",
+          "color": "#ffcb2b"
+        },
+        {
+          "icon": "bxl-paypal",
+          "name": "Paypal API",
+          "color": "#003087"
+        },
+        {
+          "icon": "bxl-netlify",
+          "name": "Netlify Hosting",
+          "color": "#00c7b7"
+        }
+      ],
       "image": "./images/project/packandgo.png",
-      "tech": [
-        { "name": "HTML5", "icon": "bxl-html5", "color": "#e34c26" },
-        { "name": "CSS3", "icon": "bxl-css3", "color": "#264de4" },
-        { "name": "Javascript", "icon": "bxl-javascript", "color": "#f0db4f" },
-        { "name": "Firebase", "icon": "bxl-firebase", "color": "#ffcb2b" },
-        { "name": "Paypal API", "icon": "bxl-paypal", "color": "#003087" },
-        { "name": "Netlify Hosting", "icon": "bxl-netlify", "color": "#00c7b7" }
-      ]
+      "title": "Pack&Go E-commerce",
+      "demoUrl": "https://packgotrial.netlify.app/",
+      "featured": false,
+      "githubUrl": "https://github.com/MahmoudShalabyy/PackAndGo.git",
+      "description": "Responsive e-commerce site for travel bags with Firebase auth (Google sign-in), PayPal checkout, Firestore order tracking, and admin dashboard for product management."
     },
     {
-      "title": "Hair Pilot Salon With AI",
-      "description": "Angular web app for personalized haircut suggestions using AI face shape detection, with real-time recommendations, salon booking via Firestore, and responsive UI.",
-      "demoUrl": "https://hair-pilot.vercel.app/home",
-      "githubUrl": "https://github.com/MahmoudShalabyy/HairPilot.git",
+      "tech": [
+        {
+          "icon": "bxl-angular",
+          "name": "Angular",
+          "color": "#dd0031"
+        },
+        {
+          "icon": "bxs-brain",
+          "name": "face-api",
+          "color": "#ff6f61"
+        },
+        {
+          "icon": "bxl-firebase",
+          "name": "Firebase",
+          "color": "#ffcb2b"
+        },
+        {
+          "icon": "bxl-html5",
+          "name": "HTML5",
+          "color": "#e34c26"
+        },
+        {
+          "icon": "bxl-css3",
+          "name": "CSS3",
+          "color": "#264de4"
+        },
+        {
+          "icon": "bxl-bootstrap",
+          "name": "Bootstrap5",
+          "color": "#563d7c"
+        }
+      ],
       "image": "./images/project/hairpilot.png",
-      "tech": [
-        { "name": "Angular", "icon": "bxl-angular", "color": "#dd0031" },
-        { "name": "face-api", "icon": "bxs-brain", "color": "#ff6f61" },
-        { "name": "Firebase", "icon": "bxl-firebase", "color": "#ffcb2b" },
-        { "name": "HTML5", "icon": "bxl-html5", "color": "#e34c26" },
-        { "name": "CSS3", "icon": "bxl-css3", "color": "#264de4" },
-        { "name": "Bootstrap5", "icon": "bxl-bootstrap", "color": "#563d7c" }
-      ]
+      "title": "Hair Pilot Salon With AI",
+      "demoUrl": "https://hair-pilot.vercel.app/home",
+      "featured": false,
+      "githubUrl": "https://github.com/MahmoudShalabyy/HairPilot.git",
+      "description": "Angular web app for personalized haircut suggestions using AI face shape detection, with real-time recommendations, salon booking via Firestore, and responsive UI."
     },
     {
-      "title": "MEDNIOVA - Medical Clinic",
-      "description": "Modern responsive landing page for a medical clinic with smooth scrolling, clean service layout with pricing, and cross-device responsiveness.",
-      "demoUrl": "https://mahmoudshalabyy.github.io/site1/3.html",
-      "githubUrl": "https://github.com/MahmoudShalabyy/site1.git",
+      "tech": [
+        {
+          "icon": "bxl-html5",
+          "name": "HTML5",
+          "color": "#e34c26"
+        },
+        {
+          "icon": "bxl-css3",
+          "name": "CSS3",
+          "color": "#264de4"
+        },
+        {
+          "icon": "bxl-javascript",
+          "name": "Javascript",
+          "color": "#f0db4f"
+        },
+        {
+          "icon": "bx-font",
+          "name": "Animation",
+          "color": "#000000"
+        },
+        {
+          "icon": "bxl-github",
+          "name": "GitHub",
+          "color": "#171515"
+        }
+      ],
       "image": "./images/project/d.PNG",
-      "tech": [
-        { "name": "HTML5", "icon": "bxl-html5", "color": "#e34c26" },
-        { "name": "CSS3", "icon": "bxl-css3", "color": "#264de4" },
-        { "name": "Javascript", "icon": "bxl-javascript", "color": "#f0db4f" },
-        { "name": "Animation", "icon": "bx-font", "color": "#000000" },
-        { "name": "GitHub", "icon": "bxl-github", "color": "#171515" }
-      ]
+      "title": "MEDNIOVA - Medical Clinic",
+      "demoUrl": "https://mahmoudshalabyy.github.io/site1/3.html",
+      "featured": false,
+      "githubUrl": "https://github.com/MahmoudShalabyy/site1.git",
+      "description": "Modern responsive landing page for a medical clinic with smooth scrolling, clean service layout with pricing, and cross-device responsiveness."
     },
     {
-      "title": "Coffee Corner Landing Page",
-      "description": "Modern responsive landing page for a coffee shop with smooth scrolling, clean menu layout with product images and pricing, and full device responsiveness.",
-      "demoUrl": "https://badawy24.github.io/Coffee_Corner/",
-      "githubUrl": "https://github.com/Badawy24/Coffee_Corner",
-      "image": "./images/project/coffeecorner.png",
       "tech": [
-        { "name": "HTML5", "icon": "bxl-html5", "color": "#e34c26" },
-        { "name": "CSS3", "icon": "bxl-css3", "color": "#264de4" },
-        { "name": "Javascript", "icon": "bxl-javascript", "color": "#f0db4f" },
-        { "name": "Animation", "icon": "bx-font", "color": "#000000" },
-        { "name": "GitHub", "icon": "bxl-github", "color": "#171515" }
-      ]
+        {
+          "icon": "bxl-html5",
+          "name": "HTML5",
+          "color": "#e34c26"
+        },
+        {
+          "icon": "bxl-css3",
+          "name": "CSS3",
+          "color": "#264de4"
+        },
+        {
+          "icon": "bxl-javascript",
+          "name": "Javascript",
+          "color": "#f0db4f"
+        },
+        {
+          "icon": "bx-font",
+          "name": "Animation",
+          "color": "#000000"
+        },
+        {
+          "icon": "bxl-github",
+          "name": "GitHub",
+          "color": "#171515"
+        }
+      ],
+      "image": "./images/project/coffeecorner.png",
+      "title": "Coffee Corner Landing Page",
+      "demoUrl": "https://badawy24.github.io/Coffee_Corner/",
+      "featured": false,
+      "githubUrl": "https://github.com/Badawy24/Coffee_Corner",
+      "description": "Modern responsive landing page for a coffee shop with smooth scrolling, clean menu layout with product images and pricing, and full device responsiveness."
     }
-  ],
-  "contact": {
-    "heading": "Let's Work Together",
-    "description": "If you need a professional website design or want to build a website from scratch, I'm here to help! I can also create creative landing pages that boost your conversion rate. Additionally, I have experience in website management and providing technical support to ensure smooth and efficient operation.",
-    "phone": "+20 1027326622",
-    "email": "mahmoudshalabyyy4@gmail.com",
-    "socials": [
-      { "name": "Github", "url": "https://github.com/MahmoudShalabyy", "icon": "bxl-github" },
-      { "name": "LinkedIn", "url": "https://www.linkedin.com/in/mahmoud-shalaby-58b237227/", "icon": "bxl-linkedin" },
-      { "name": "Facebook", "url": "https://web.facebook.com/ghrthygfhdfgfgdhdfgh", "icon": "bxl-facebook" },
-      { "name": "LeetCode", "url": "https://leetcode.com/u/mahmoudshalabyy4/", "icon": "bx-code-alt" },
-      { "name": "UpWork", "url": "https://www.upwork.com/freelancers/~011eaffdd3a6074307", "icon": "bxl-upwork" }
-    ]
-  }
+  ]
 }
