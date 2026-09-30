@@ -70,9 +70,15 @@ const downloadImage = async (url) => {
     return { name, relative: `./images/synced/${name}` };
 };
 
+const LOCAL_PREFIX = './images/synced/';
+
 /**
  * Walks the data tree, downloading every Supabase-hosted image and swapping in
  * the local path. Mutates in place and reports which files are now referenced.
+ *
+ * Note that a path may already be local: once a backup is published back to
+ * Supabase, the stored URLs *are* the local ones. Those count as referenced
+ * just as much as a fresh download does.
  */
 const localiseImages = async (data, supabaseUrl) => {
     const keep = new Set();
@@ -99,6 +105,8 @@ const localiseImages = async (data, supabaseUrl) => {
                     failed++;
                     console.warn(`  ✗ ${key}: ${err.message} (kept remote URL)`);
                 }
+            } else if (typeof value === 'string' && value.startsWith(LOCAL_PREFIX)) {
+                keep.add(value.slice(LOCAL_PREFIX.length));
             } else if (value && typeof value === 'object') {
                 await walk(value);
             }
@@ -109,11 +117,22 @@ const localiseImages = async (data, supabaseUrl) => {
     return { keep, downloaded, failed };
 };
 
-/** Drop synced files nothing points at any more, so the folder cannot grow forever. */
+/**
+ * Drop synced files nothing points at any more, so the folder cannot grow
+ * forever. Refuses to run on an empty keep set: that means the walk found no
+ * image references at all, which is a bug rather than a licence to delete
+ * every image the site depends on.
+ */
 const pruneOrphans = async (keep) => {
+    const files = (await readdir(SYNCED_DIR)).filter((f) => f !== '.gitkeep');
+    if (files.length && keep.size === 0) {
+        console.warn('  ! no image references found — skipping prune to avoid deleting live images');
+        return 0;
+    }
+
     let removed = 0;
-    for (const file of await readdir(SYNCED_DIR)) {
-        if (file === '.gitkeep' || keep.has(file)) continue;
+    for (const file of files) {
+        if (keep.has(file)) continue;
         await unlink(join(SYNCED_DIR, file));
         console.log(`  – removed unused ${file}`);
         removed++;
