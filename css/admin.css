@@ -268,6 +268,18 @@ code {
     color: var(--text);
 }
 
+/* Destructive action — must not look like the neutral buttons above it. */
+.btn-ghost.btn-danger {
+    color: var(--danger);
+    border-color: color-mix(in srgb, var(--danger) 45%, transparent);
+}
+
+.btn-ghost.btn-danger:hover {
+    background: var(--danger);
+    border-color: var(--danger);
+    color: white;
+}
+
 /* Main */
 .main-content {
     padding: 30px 40px;

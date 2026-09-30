@@ -163,7 +163,18 @@
         const reloadBtn = document.getElementById('reload-btn');
         if (reloadBtn) {
             reloadBtn.addEventListener('click', async () => {
-                if (!confirm('Reload data from data.json file? This will discard your unsaved changes and load the latest data.json. You will need to click Publish Changes to save to Supabase.')) return;
+                const warning = [
+                    '⚠  DISCARD YOUR CURRENT EDITS?',
+                    '',
+                    'Everything now shown in this dashboard will be thrown away and',
+                    'replaced with the last daily backup (data.json).',
+                    '',
+                    'Only do this if the dashboard is broken and you want to start over',
+                    'from the last known-good version.',
+                    '',
+                    'Nothing is sent to the live site until you click "Publish Changes".',
+                ].join('\n');
+                if (!confirm(warning)) return;
                 try {
                     localStorage.removeItem(DRAFT_KEY);
                     const res = await fetch('./data.json?t=' + Date.now());
