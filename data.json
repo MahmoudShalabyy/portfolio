@@ -261,15 +261,15 @@
         {
           "year": "08/2025 - Present",
           "title": "Full Stack Laravel Developer",
-          "company": "Hunt ERP",
-          "description": "Sole developer on my projects: I gather requirements from clients, plan, build, deliver and iterate.",
           "bullets": [
             "Built a multi-tenant clinic management platform from scratch (Laravel 12, database-per-tenant): scheduling with conflict and capacity checks using transactions and row locks, public booking with capacity holds, patient portal, prescriptions, invoices, reports, Arabic/English. Live: https://clinics.huntech.net",
             "Built the ZMK e-learning ecosystem: 3 integrated systems, about 75 features. Student website and admin dashboard from scratch, plus an E-Learning module and two-way integration in the client's ERP. VdoCipher playback with student watermark, quizzes, progress tracking, rewards, email OTP, Paymob checkout. Live: https://zmk-eg.com",
             "Turned the core ERP modules into a SaaS subscription product for small shops: database-per-tenant, trials and grace periods, renewals that keep remaining time, module licensing via middleware, per-user licensing. Live: https://subscription.hunt-eg.com",
             "Built the Paymob payment integration for the company website: Unified Checkout, HMAC-SHA512 verification on both redirect and webhook, activation of subscriptions, modules and extra users through REST APIs.",
             "Enhancements and bug fixes across ERP modules (Accounting, HR, Inventory, CRM, POS)."
-          ]
+          ],
+          "company": "Hunt ERP",
+          "description": "Sole developer on my projects: I gather requirements from clients, plan, build, deliver and iterate."
         }
       ],
       "description": "Full Stack Laravel Developer working on multi-tenant systems, ERP modules and e-learning platforms. Sole developer on my projects: I gather requirements from clients, plan, build, deliver and iterate."
