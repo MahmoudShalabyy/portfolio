@@ -1,0 +1,43 @@
+name: Sync portfolio backup
+
+# Runs daily. Two jobs in one:
+#   1. Hitting Supabase counts as activity, which stops the free tier pausing
+#      the project after a week of idleness.
+#   2. Whatever is live in Supabase gets written back to data.json (with images
+#      pulled local), so the site still renders fully if Supabase ever is down.
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-portfolio
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Pull live content from Supabase
+        run: node scripts/sync-from-supabase.mjs
+
+      - name: Commit the backup if it changed
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data.json images/synced
+          if git diff --staged --quiet; then
+            echo 'Backup already up to date.'
+          else
+            git commit -m 'Sync portfolio backup from Supabase'
+            git push
+          fi
