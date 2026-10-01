@@ -142,6 +142,29 @@ const pruneOrphans = async (keep) => {
     return removed;
 };
 
+/**
+ * Compares two serialised payloads by content, ignoring formatting. A checkout
+ * on Windows rewrites the file with CRLF endings, and Postgres jsonb does not
+ * preserve key order, so the same data reaches us spelled differently every
+ * time; a byte comparison would report an endless, phantom difference.
+ */
+const sameContent = (a, b) => {
+    if (a === b) return true;
+    if (a == null || b == null) return false;
+    const canonical = (value) => {
+        if (Array.isArray(value)) return value.map(canonical);
+        if (value && typeof value === 'object') {
+            return Object.fromEntries(Object.keys(value).sort().map((k) => [k, canonical(value[k])]));
+        }
+        return value;
+    };
+    try {
+        return JSON.stringify(canonical(JSON.parse(a))) === JSON.stringify(canonical(JSON.parse(b)));
+    } catch {
+        return false;
+    }
+};
+
 const main = async () => {
     const config = await readConfig();
     console.log(`Fetching portfolio from ${config.url} ...`);
@@ -164,7 +187,7 @@ const main = async () => {
     // hold file suspends the mirror until the two agree again.
     const held = await readFile(HOLD_FILE, 'utf8').then(() => true).catch(() => false);
     if (held) {
-        if (previous !== serialised) {
+        if (!sameContent(previous, serialised)) {
             console.warn(
                 `\nHeld: ${basename(HOLD_FILE)} is present and data.json differs from Supabase, ` +
                 'so the repo has edits that have not been published yet. Leaving data.json alone.\n' +
@@ -181,7 +204,7 @@ const main = async () => {
 
     console.log(
         `\nDone — ${downloaded} image(s) downloaded, ${failed} failed, ${removed} pruned. ` +
-        `data.json ${previous === serialised ? 'unchanged' : 'updated'}.`
+        `data.json ${sameContent(previous, serialised) ? 'unchanged' : 'updated'}.`
     );
 };
 
