@@ -405,6 +405,40 @@
       "description": "SaaS subscription product built on the core ERP modules: database-per-tenant, trials and grace periods, Paymob checkout, self-service renewal that keeps remaining time, automatic expiry at the end of the term, and module and per-user licensing."
     },
     {
+      "title": "Offline Desktop Business Applications",
+      "description": "Side project with two colleagues: an offline desktop foundation (Laravel 12, NativePHP, SQLite) behind three products — a retail POS running in two shops, a gym manager and a gaming-lounge manager. Arabic/English, around 480 PHPUnit tests.",
+      "demoUrl": "",
+      "githubUrl": "",
+      "image": "./images/project/offline-desktop-ps-manager.png",
+      "tech": [
+        {
+          "name": "Laravel 12",
+          "icon": "bxs-component",
+          "color": "#ff2d20"
+        },
+        {
+          "name": "NativePHP",
+          "icon": "bxl-php",
+          "color": "#8892be"
+        },
+        {
+          "name": "Electron",
+          "icon": "bxs-devices",
+          "color": "#47848f"
+        },
+        {
+          "name": "SQLite",
+          "icon": "bxs-data",
+          "color": "#003b57"
+        },
+        {
+          "name": "PHPUnit",
+          "icon": "bx-test-tube",
+          "color": "#3c9cd7"
+        }
+      ]
+    },
+    {
       "tech": [
         {
           "icon": "bxl-react",
