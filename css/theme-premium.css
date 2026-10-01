@@ -1576,8 +1576,10 @@ body.light-mode .project-card-body h4 {
     color: rgba(236, 236, 241, 0.6);
     margin: 0;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
+    /* Six lines, not three: at three the detail that makes a project worth
+       reading about — scale, testing, what shipped — was cut off unread. */
+    -webkit-line-clamp: 6;
+    line-clamp: 6;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
