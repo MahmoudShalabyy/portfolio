@@ -14,12 +14,14 @@
  */
 
 import { readFile, writeFile, mkdir, readdir, unlink } from 'node:fs/promises';
-import { join, dirname } from 'node:path';
+import { join, dirname, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SYNCED_DIR = join(ROOT, 'images', 'synced');
 const DATA_FILE = join(ROOT, 'data.json');
+// Present while data.json holds edits not yet published to Supabase.
+const HOLD_FILE = join(ROOT, '.sync-hold');
 
 // Read the same credentials the browser uses, so there is one source of truth.
 const readConfig = async () => {
@@ -152,10 +154,29 @@ const main = async () => {
 
     console.log('Localising images ...');
     const { keep, downloaded, failed } = await localiseImages(data, config.url);
-    const removed = await pruneOrphans(keep);
 
     const serialised = JSON.stringify(data, null, 2) + '\n';
     const previous = await readFile(DATA_FILE, 'utf8').catch(() => null);
+
+    // data.json doubles as the staging area for edits made in the repo, which
+    // only reach Supabase once someone hits Publish in the admin. Mirroring
+    // Supabase over the top in that window deletes the unpublished work, so a
+    // hold file suspends the mirror until the two agree again.
+    const held = await readFile(HOLD_FILE, 'utf8').then(() => true).catch(() => false);
+    if (held) {
+        if (previous !== serialised) {
+            console.warn(
+                `\nHeld: ${basename(HOLD_FILE)} is present and data.json differs from Supabase, ` +
+                'so the repo has edits that have not been published yet. Leaving data.json alone.\n' +
+                'Publish from the admin dashboard; the next run clears the hold by itself.'
+            );
+            return;
+        }
+        await unlink(HOLD_FILE);
+        console.log(`Supabase matches data.json — clearing ${basename(HOLD_FILE)}.`);
+    }
+
+    const removed = await pruneOrphans(keep);
     await writeFile(DATA_FILE, serialised);
 
     console.log(
