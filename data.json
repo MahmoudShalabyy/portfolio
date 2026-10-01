@@ -409,7 +409,7 @@
       "description": "Side project with two colleagues: an offline desktop foundation (Laravel 12, NativePHP, SQLite) behind three products — a retail POS running in two shops, a gym manager and a gaming-lounge manager. Around 480 PHPUnit tests on the POS.",
       "demoUrl": "",
       "githubUrl": "",
-      "image": "",
+      "image": "./images/project/offline-desktop-ps-manager.png",
       "tech": [
         {
           "name": "Laravel 12",
